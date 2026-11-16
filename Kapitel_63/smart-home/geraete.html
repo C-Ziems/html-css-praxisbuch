@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerätepass | Mein Smart Home</title>
+    <meta
+        name="description"
+        content="Steckbriefe der Geräte in unserem virtuellen Smart Home mit technischen Daten, Wartungshinweisen und Servicekontakt."
+    >
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="seitenrahmen">
+        <a class="sprunglink" href="#hauptinhalt">Zum Hauptinhalt</a>
+        <header>
+            <h1>Gerätepass</h1>
+        </header>
+        <nav class="hauptnavigation">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="haus.html">Das Haus</a></li>
+                <li><a href="geraete.html" aria-current="page">Geräte</a></li>
+                <li><a href="einkaufsliste.html">Einkaufsliste</a></li>
+            </ul>
+        </nav>
+        <main id="hauptinhalt">
+            <p>Hier stellen wir die Geräte unseres Smart Homes in kurzen Steckbriefen vor. Alle Angaben sind Demonstrationsdaten.</p>
+            <menu class="befehlsleiste" aria-label="Hilfen zum Gerätepass">
+                <li>
+                    <button
+                        class="popover-steuerung"
+                        type="button"
+                        popovertarget="begriffe"
+                    >
+                        Begriffe erklären
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="popover-steuerung"
+                        type="button"
+                        popovertarget="wartungshinweise"
+                    >
+                        Wartungshinweise
+                    </button>
+                </li>
+            </menu>
+            <div id="begriffe" popover>
+                <h2>Begriffe im Gerätepass</h2>
+                <dl>
+                    <dt>Kennung im Heimnetz</dt>
+                    <dd>Eindeutiger Name, unter dem die Steuerung das Gerät führt.</dd>
+                    <dt>Nachlaufzeit</dt>
+                    <dd>Zeit, die das Licht nach der letzten erkannten Bewegung eingeschaltet bleibt.</dd>
+                    <dt>Maximale Last</dt>
+                    <dd>Höchste Leistung, die am Zwischenstecker angeschlossen werden darf.</dd>
+                </dl>
+                <button
+                    class="popover-steuerung"
+                    type="button"
+                    popovertarget="begriffe"
+                    popovertargetaction="hide"
+                >
+                    Schließen
+                </button>
+            </div>
+            <div id="wartungshinweise" popover>
+                <h2>Hinweise zur Wartung</h2>
+                <p>
+                    Die Termine in den Steckbriefen und in der Tabelle sind
+                    Demonstrationsdaten. Wartung und Batteriewechsel richten
+                    sich nach den Angaben des jeweiligen Herstellers.
+                </p>
+                <button
+                    class="popover-steuerung"
+                    type="button"
+                    popovertarget="wartungshinweise"
+                    popovertargetaction="hide"
+                >
+                    Schließen
+                </button>
+            </div>
+            <search class="geraetefilter">
+                <fieldset>
+                    <legend>Geräte nach Stromversorgung filtern</legend>
+                    <label>
+                        <input type="radio" name="versorgung" id="filter-alle" checked>
+                        Alle Geräte
+                    </label>
+                    <label>
+                        <input type="radio" name="versorgung" id="filter-batterie">
+                        Batterie
+                    </label>
+                    <label>
+                        <input type="radio" name="versorgung" id="filter-netz">
+                        Netzstrom
+                    </label>
+                </fieldset>
+            </search>
+            <article
+                data-versorgung="batterie"
+                itemscope
+                itemtype="https://schema.org/Product">
+                <hgroup>
+                    <h2 id="thermostat" itemprop="name">Heizkörperthermostat</h2>
+                    <p>Modell <span itemprop="model">HT 2026</span> mit Funkanbindung</p>
+                </hgroup>
+                <p itemprop="description">Das Thermostat regelt die Raumtemperatur im Wohnzimmer.</p>
+                <dl class="steckbrief">
+                    <dt>Raum</dt>
+                    <dd>Wohnzimmer</dd>
+                    <dt>Solltemperatur</dt>
+                    <dd>21&nbsp;°C</dd>
+                    <dt>Letzte Wartung</dt>
+                    <dd><time datetime="2026-03-14">14. März 2026</time></dd>
+                    <dt>Kennung im Heimnetz</dt>
+                    <dd><code translate="no">thermostat_<wbr>wohnzimmer_<wbr>01</code></dd>
+                </dl>
+            </article>
+            <article
+                data-versorgung="batterie"
+                itemscope
+                itemtype="https://schema.org/Product">
+                <hgroup>
+                    <h2 id="rauchmelder" itemprop="name">Rauchmelder</h2>
+                    <p>Modell <span itemprop="model">RM 2026</span> mit LED-Anzeige</p>
+                </hgroup>
+                <p itemprop="description">Der Rauchmelder überwacht die Küche und meldet Rauchentwicklung.</p>
+                <dl class="steckbrief">
+                    <dt>Raum</dt>
+                    <dd>Küche</dd>
+                    <dt>Nächster Batteriewechsel</dt>
+                    <dd><time datetime="2027-01">Januar 2027</time></dd>
+                    <dt>Kennung im Heimnetz</dt>
+                    <dd><code translate="no">rauchmelder_<wbr>kueche_<wbr>01</code></dd>
+                </dl>
+            </article>
+            <article
+                data-versorgung="batterie"
+                itemscope
+                itemtype="https://schema.org/Product">
+                <hgroup>
+                    <h2 id="bewegungsmelder" itemprop="name">Bewegungsmelder</h2>
+                    <p>Modell <span itemprop="model">BM 2026</span> für Innenräume</p>
+                </hgroup>
+                <p itemprop="description">Der Bewegungsmelder schaltet bei Bewegung das Licht im Bad ein.</p>
+                <dl class="steckbrief">
+                    <dt>Raum</dt>
+                    <dd>Bad</dd>
+                    <dt>Nachlaufzeit</dt>
+                    <dd>3&nbsp;min</dd>
+                    <dt>Kennung im Heimnetz</dt>
+                    <dd><code translate="no">bewegungsmelder_<wbr>bad_<wbr>01</code></dd>
+                </dl>
+            </article>
+            <article
+                data-versorgung="netz"
+                itemscope
+                itemtype="https://schema.org/Product">
+                <hgroup>
+                    <h2 id="zwischenstecker" itemprop="name">Zwischenstecker</h2>
+                    <p>Modell <span itemprop="model">ZS 2026</span> mit Verbrauchsmessung</p>
+                </hgroup>
+                <p itemprop="description">Der Zwischenstecker schaltet die Schreibtischlampe im Arbeitszimmer und misst ihren Verbrauch.</p>
+                <dl class="steckbrief">
+                    <dt>Raum</dt>
+                    <dd>Arbeitszimmer</dd>
+                    <dt>Angeschlossenes Gerät</dt>
+                    <dd>Schreibtischlampe</dd>
+                    <dt>Maximale Last</dt>
+                    <dd>3680&nbsp;W</dd>
+                    <dt>Kennung im Heimnetz</dt>
+                    <dd><code translate="no">zwischenstecker_<wbr>arbeitszimmer_<wbr>01</code></dd>
+                </dl>
+            </article>
+            <section>
+                <h2 id="technische-daten">Technische Daten im Vergleich</h2>
+                <div
+                    class="tabellenbereich"
+                    role="region"
+                    aria-labelledby="geraetedaten-titel"
+                    tabindex="0">
+                    <table>
+                        <caption id="geraetedaten-titel">
+                            Stromversorgung und Wartung der Geräte
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Gerät</th>
+                                <th scope="col">Raum</th>
+                                <th scope="col">Stromversorgung</th>
+                                <th scope="col">Wartung</th>
+                                <th scope="col">Hinweis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Heizkörperthermostat</th>
+                                <td>Wohnzimmer</td>
+                                <td>2 Batterien AA</td>
+                                <td>Batteriewechsel jährlich</td>
+                                <td>Fenster-offen-Erkennung aktiv</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rauchmelder</th>
+                                <td>Küche</td>
+                                <td>Batterie 9&nbsp;V</td>
+                                <td>Funktionstest monatlich</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Bewegungsmelder</th>
+                                <td>Bad</td>
+                                <td>Knopfzelle CR2032</td>
+                                <td>Batteriewechsel bei Meldung</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Zwischenstecker</th>
+                                <td>Arbeitszimmer</td>
+                                <td>Netzstrom 230&nbsp;V</td>
+                                <td>Keine</td>
+                                <td>Misst den Verbrauch</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    Leere Zellen in der Spalte „Hinweis“ bedeuten,
+                    dass kein besonderer Hinweis vorliegt.
+                </p>
+            </section>
+            <section>
+                <h2 id="service">Service und Kontakt</h2>
+                <p>Fragen zu den Geräten beantwortet unsere Haustechnik. Die Angaben sind Demonstrationsdaten.</p>
+                <address>
+                    Haustechnik Smart Home<br>
+                    E-Mail: <a href="mailto:haustechnik@example.com">haustechnik@example.com</a><br>
+                    Telefon: <a href="tel:+49301234567">030 1234567</a>
+                </address>
+            </section>
+        </main>
+        <footer class="seitenfuss">
+            <p>Projektstand: <time datetime="2026-09-27">27. September 2026</time></p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 30, Aufgabe 2: Verkleinerte Image Map</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>Verkleinerte Image Map</h1>
+    <p>
+        CSS zeigt das Bild mit halber Breite. Fahre mit der Maus über Küche und Bad: Die Linkflächen
+        behalten ihre ursprünglichen Koordinaten und passen nicht mehr. Die Textlinks darunter führen
+        zuverlässig zu den Zielen.
+    </p>
+    <img class="halb" src="plan.svg" alt="Grundriss mit Küche und Bad" width="600" height="400" usemap="#plan">
+    <map name="plan">
+        <area shape="rect" coords="0,0,300,200" href="#kueche" alt="Küche">
+        <area shape="circle" coords="450,300,80" href="#bad" alt="Bad">
+    </map>
+    <ul>
+        <li><a href="#kueche">Küche</a></li>
+        <li><a href="#bad">Bad</a></li>
+    </ul>
+    <h2 id="kueche">Küche</h2>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <h2 id="bad">Bad</h2>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+</body>
+</html>

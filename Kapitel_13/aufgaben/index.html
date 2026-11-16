@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 13 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 13: Selektoren, Klassen und IDs</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Stylesheet soll folgende Elemente auswählen: a) alle Links innerhalb der Hauptnavigation, b) nur die direkten Listeneinträge einer Liste mit der Klasse <code>geraeteliste</code>, c) Elemente, die zugleich die Klassen <code>pruefen</code> und <code>dringend</code> tragen, d) den Link mit <code>aria-current="page"</code>. Schreibe die passenden Selektoren.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.hauptnavigation a { }          /* a) */
+.geraeteliste &gt; li { }          /* b) */
+.pruefen.dringend { }           /* c) */
+[aria-current="page"] { }       /* d) */</code></pre>
+                </figure>
+                <p>Bei b) beschränkt der Kindkombinator <code>&gt;</code> die Auswahl auf direkte Kinder; Einträge verschachtelter Listen bleiben ausgenommen. Bei c) steht kein Leerzeichen zwischen den Klassen, weil beide am selben Element gefordert sind.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Für dringende Prüfungen wird der Klassenname <code>rot</code> vorgeschlagen. Begründe, warum dieser Name ungeeignet ist, und schlage einen besseren vor.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>rot</code> beschreibt das Aussehen, nicht die Aufgabe. Ändert sich die Gestaltung, etwa zu Orange oder zu einer fetten Schrift, passt der Name nicht mehr, und HTML und CSS widersprechen sich. Besser ist ein Name, der den Zustand benennt, zum Beispiel <code>dringend</code>, wie in unserem Projekt.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-13.md</code>.</p>
+    </footer>
+</body>
+</html>

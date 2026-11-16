@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 27, Aufgabe 1: Logische Eigenschaften</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Logische Eigenschaften</h1>
+    <p>
+        Beide Kästen verwenden dieselben logischen Regeln. Oben gilt horizontaler Text von links nach
+        rechts, dort entspricht die Darstellung den physischen Angaben. Unten gilt dir="rtl": Abstand und
+        Markierung wechseln die Seite.
+    </p>
+    <div class="rahmen">
+        <p class="regel">Text von links nach rechts</p>
+        <span class="markierung">Ende</span>
+    </div>
+    <div class="rahmen" dir="rtl">
+        <p class="regel">Text von rechts nach links</p>
+        <span class="markierung">Ende</span>
+    </div>
+</body>
+</html>

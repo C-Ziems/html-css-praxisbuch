@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 20 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 20: Semantische Seitenstruktur</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Blogartikel besteht aus einem Kopf mit Titel und Datum, mehreren Inhaltsabschnitten, einem Kasten „Weiterführende Links“ und einem Kontakt zur Autorin. Wähle passende Strukturelemente und lege ein HTML-Gerüst an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Unser Weg zum vernetzten Zuhause&lt;/h1&gt;
+        &lt;p&gt;&lt;time datetime="2026-11-15"&gt;15. November 2026&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Die Planung&lt;/h2&gt;
+        &lt;p&gt;…&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Die ersten Geräte&lt;/h2&gt;
+        &lt;p&gt;…&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;
+        &lt;h2&gt;Weiterführende Links&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="…"&gt;…&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+        &lt;address&gt;
+            Kontakt zur Autorin: &lt;a href="mailto:autorin@example.com"&gt;autorin@example.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                </figure>
+                <ul>
+                <li><code>article</code>: Der Beitrag ist in sich geschlossen.</li>
+                <li><code>header</code>: Titel und Datum leiten den Artikel ein.</li>
+                <li><code>section</code>: Jeder Abschnitt hat ein eigenes Thema mit Überschrift.</li>
+                <li><code>aside</code>: Die Links ergänzen den Artikel, gehören aber nicht zu seinem Hauptinhalt.</li>
+                <li><code>address</code> im <code>footer</code> des Artikels: Die Kontaktangabe gilt für dieses <code>article</code>.</li>
+                </ul>
+                <p>Andere Fassungen sind vertretbar, wenn die Begründung trägt. Gelten die weiterführenden Links für die ganze Seite und nicht nur für diesen Beitrag, kann das <code>aside</code> auch außerhalb des <code>article</code> stehen. Die Kontaktangabe darf ebenso im <code>header</code> des Artikels stehen.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Das folgende Gerüst enthält zwei Schwachstellen. Erkläre, warum die beiden sichtbaren <code>main</code>-Elemente unzulässig sind, und prüfe, ob der Begrüßungsabsatz eine eigene <code>section</code> braucht. Erstelle eine begründete Fassung:</p>
+            <figure class="code">
+            <figcaption>HTML</figcaption>
+            <pre><code>&lt;body&gt;
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;p&gt;Willkommen im Smart Home.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;main&gt;…&lt;/main&gt;
+&lt;/body&gt;</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ol>
+                <li>Ein Dokument darf nur ein sichtbares <code>main</code>-Element enthalten. Das ist eine Regel des HTML-Standards; ein zweites sichtbares <code>main</code> ist ein Fehler. Der Inhalt des zweiten gehört in das erste <code>main</code>.</li>
+                <li>Die <code>section</code> ist kein Regelverstoß, aber eine Frage der Gliederung. Eine <code>section</code> beschreibt einen thematischen Abschnitt, der typischerweise eine eigene Überschrift trägt. Ein einzelner Begrüßungsabsatz bildet keinen solchen Abschnitt. Er kann deshalb unmittelbar im Hauptinhalt stehen.</li>
+                </ol>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;body&gt;
+    &lt;main&gt;
+        &lt;p&gt;Willkommen im Smart Home.&lt;/p&gt;
+        …
+    &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+                </figure>
+                <p>Soll die Begrüßung später zu einem eigenen Thema mit mehreren Inhalten ausgebaut werden, ist eine <code>section</code> mit passender Überschrift ebenfalls eine begründete Lösung.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-20.md</code>.</p>
+    </footer>
+</body>
+</html>

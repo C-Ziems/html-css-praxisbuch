@@ -1,0 +1,19 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --abstand-mittel: 1rem;
+    --farbe-hintergrund: #fff;
+    --farbe-flaeche-abgesetzt: #e4e8eb;
+    --farbe-rahmen: #999;
+    --farbe-akzent: #123f67;
+    --radius-standard: 0.5rem;
+    --schatten-karte: 0 0.125rem 0.5rem rgb(0 0 0 / 0.15);
+}
+
+ol li::marker {
+    font-weight: bold;
+    color: var(--farbe-akzent);
+}

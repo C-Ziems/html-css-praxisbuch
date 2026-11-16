@@ -1,0 +1,4 @@
+# Nicht benötigte System- und Temporärdateien
+.DS_Store
+Thumbs.db
+*.tmp

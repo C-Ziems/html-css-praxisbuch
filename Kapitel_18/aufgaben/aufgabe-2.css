@@ -1,0 +1,13 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin: 0;
+    border: 1px solid;
+    background-color: lightyellow;
+}
+
+.erster { margin-bottom: 1rem; }
+.zweiter { margin-top: 1.5rem; }

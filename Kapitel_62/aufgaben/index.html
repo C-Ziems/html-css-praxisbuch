@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 62 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 62: Die Website für das Hosting vorbereiten</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Nach dem Upload fehlen Gestaltung und ein Bild. Im Netzwerkbereich zeigt <code>style.css</code> den Status 200 mit <code>Content-Type: text/plain</code>, und <code>Bilder/grundriss.png</code> den Status 404, obwohl die Datei als <code>bilder/grundriss.png</code> hochgeladen wurde. Gib die Ursachen und Lösungen an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ol>
+                <li>Der Server liefert <code>style.css</code> mit dem falschen Medientyp aus. Browser wenden ein Stylesheet mit <code>text/plain</code> nicht an. Die Lösung liegt in der Serverkonfiguration: <code>.css</code> muss als <code>text/css</code> ausgeliefert werden.</li>
+                <li>Im HTML steht <code>Bilder/grundriss.png</code>, die Datei heißt <code>bilder/grundriss.png</code>. Auf dem Server wird Groß- und Kleinschreibung unterschieden. Wir korrigieren den Pfad im HTML auf die tatsächliche Schreibweise.</li>
+                </ol>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Projektordner enthält <code>.git</code>, <code>notizen.txt</code>, <code>entwurf-alt.html</code>, <code>index.html</code>, <code>style.css</code>, <code>css/</code> und <code>bilder/</code>. Nenne die Dateien und Ordner, die veröffentlicht werden, und begründe die Auswahl.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Veröffentlicht werden <code>index.html</code>, <code>style.css</code> sowie die Ordner <code>css/</code> und <code>bilder/</code> mit ihrem Inhalt, dazu die übrigen benötigten Seiten. <code>.git</code> ist die Versionsverwaltung, <code>notizen.txt</code> eine interne Notiz und <code>entwurf-alt.html</code> ein überholter Entwurf; sie gehören nicht in den öffentlichen Bereich. Wir wählen die Dateien bewusst aus, statt den Arbeitsordner vollständig zu übertragen.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-62.md</code>.</p>
+    </footer>
+</body>
+</html>

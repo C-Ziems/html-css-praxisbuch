@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 13, Aufgabe 1: Selektoren im Einsatz</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Selektoren im Einsatz</h1>
+    <p>
+        Jeder Selektor aus der Lösung färbt seine Auswahl unterschiedlich: a) grüne Links in der
+        Hauptnavigation, b) blaue direkte Einträge der Geräteliste (nicht die verschachtelten), c) roter
+        Text bei beiden Klassen, d) gelber Hintergrund am aktuellen Link.
+    </p>
+    <nav class="hauptnavigation">
+        <a href="aufgabe-1.html" aria-current="page">Startseite</a>
+        <a href="index.html">Aufgaben</a>
+    </nav>
+    <ul class="geraeteliste">
+        <li>Thermostat</li>
+        <li>Rauchmelder
+            <ul>
+                <li>Küche</li>
+                <li>Flur</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="pruefen dringend">Rauchmelder Küche: Prüfung dringend</p>
+    <p class="pruefen">Thermostat: Prüfung im Herbst</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 24, Aufgabe 2: 1fr und minmax(0, 1fr)</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>1fr und minmax(0, 1fr) im Vergleich</h1>
+    <p class="hinweis">
+        Alle drei Raster besitzen zwei Spalten und denselben Inhalt. Die linke Spalte enthält ein sehr langes Wort.
+        Mache das Fenster schmaler und vergleiche die Spaltenbreiten. Im Grid-Inspector der DevTools
+        lassen sich die Spurgrenzen zusätzlich einblenden.
+    </p>
+
+    <h2>A: <code>1fr 1fr</code></h2>
+    <div class="raster raster-fr">
+        <p>Donaudampfschifffahrtsgesellschaftskapitänsmütze</p>
+        <p>Kurzer Text</p>
+    </div>
+
+    <h2>B: <code>minmax(0, 1fr) minmax(0, 1fr)</code></h2>
+    <div class="raster raster-minmax">
+        <p>Donaudampfschifffahrtsgesellschaftskapitänsmütze</p>
+        <p>Kurzer Text</p>
+    </div>
+
+    <h2>C: wie B, zusätzlich <code>overflow-wrap: anywhere</code></h2>
+    <div class="raster raster-minmax umbruch">
+        <p>Donaudampfschifffahrtsgesellschaftskapitänsmütze</p>
+        <p>Kurzer Text</p>
+    </div>
+
+    <p class="hinweis">
+        Bei A wird die linke Spalte breiter als die rechte, sobald das Wort nicht mehr hineinpasst.
+        Bei B bleiben beide Spalten gleich breit, das Wort ragt aber über seine Spalte hinaus.
+        Bei C bleiben die Spalten gleich breit, und das Wort bricht innerhalb seiner Spalte um.
+    </p>
+</body>
+</html>

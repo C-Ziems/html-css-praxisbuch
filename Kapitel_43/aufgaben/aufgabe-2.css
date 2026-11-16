@@ -1,0 +1,17 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:focus-visible {
+    outline: none;
+}
+
+.mit-rahmen:focus-visible {
+    border: 4px solid #123f67;
+}
+
+.mit-kontur:focus-visible {
+    outline: 4px solid #123f67;
+    outline-offset: 2px;
+}

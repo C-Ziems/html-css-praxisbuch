@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 14 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 14: CSS-Werte, Einheiten und grundlegende Funktionen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Die Wurzelschriftgröße beträgt 16 Pixel. Bestimme die Ergebnisse in Pixeln für a) <code>font-size: 2rem</code>, b) <code>font-size: 1.5em</code> bei einer Elternschrift von 20 Pixeln, c) <code>line-height: 1.5</code> bei 18 Pixeln Schriftgröße, d) <code>width: calc(100% - 2rem)</code> in einem 600 Pixel breiten Container.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) 2 × 16 px = 32 px</p>
+                <p>b) 1,5 × 20 px = 30 px (in <code>font-size</code> bezieht sich <code>em</code> auf die Schrift des Elternelements)</p>
+                <p>c) 1,5 × 18 px = 27 px</p>
+                <p>d) 600 px − 32 px = 568 px</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Die Wurzelschriftgröße beträgt 16 Pixel. Eine Überschrift soll mit 5 Prozent der Viewportbreite wachsen, aber nie kleiner als <code>1.5rem</code> und nie größer als <code>2.5rem</code> werden. Schreibe die Regel und berechne den Wert bei einem 600 Pixel breiten Viewport.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}</code></pre>
+                </figure>
+                <p>Bei 600 px Viewportbreite ergibt <code>5vw</code> 30 px. Der Wert liegt zwischen 24 px (<code>1.5rem</code>) und 40 px (<code>2.5rem</code>), die Schriftgröße beträgt deshalb 30 px.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-14.md</code>.</p>
+    </footer>
+</body>
+</html>

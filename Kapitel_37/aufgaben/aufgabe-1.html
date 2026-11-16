@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 37, Aufgabe 1: Feldgruppe Lieferadresse</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Feldgruppe Lieferadresse</h1>
+    <p>
+        Ein Screenreader nennt beim Betreten eines Felds auch die Legende „Lieferadresse“. Im Accessibility-
+        Bereich der DevTools erscheint die Gruppe mit diesem Namen.
+    </p>
+    <form action="aufgabe-1.html">
+        <fieldset>
+            <legend>Lieferadresse</legend>
+            <div class="formularfeld">
+                <label for="strasse">Straße und Hausnummer</label>
+                <input type="text" id="strasse" name="strasse" autocomplete="street-address">
+            </div>
+            <div class="formularfeld">
+                <label for="plz">Postleitzahl</label>
+                <input type="text" id="plz" name="plz" inputmode="numeric" autocomplete="postal-code">
+            </div>
+            <div class="formularfeld">
+                <label for="ort">Ort</label>
+                <input type="text" id="ort" name="ort" autocomplete="address-level2">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

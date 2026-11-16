@@ -1,0 +1,4 @@
+@layer basis, komponenten, druck;
+@import url("css/basis.css") layer(basis);
+@import url("css/komponenten.css") layer(komponenten);
+@import url("css/druck.css") layer(druck) print;

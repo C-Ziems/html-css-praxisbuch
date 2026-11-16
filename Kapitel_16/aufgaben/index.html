@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 16 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 16: Kaskade, Vererbung und Spezifität</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Für den Link zur aktuellen Seite in <code>nav.hauptnavigation</code> gelten die folgenden Regeln. Bestimme die Spezifität jeder Regel und gib die sichtbare Farbe an:</p>
+            <figure class="code">
+            <figcaption>CSS</figcaption>
+            <pre><code>a { color: navy; }
+.hauptnavigation a { color: darkblue; }
+nav a { color: black; }
+[aria-current="page"] { color: purple; }</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <div class="tabelle"><table>
+                <thead><tr><th scope="col">Regel</th><th scope="col">Spezifität</th></tr></thead>
+                <tbody>
+                <tr><td><code>a</code></td><td>0-0-1</td></tr>
+                <tr><td><code>.hauptnavigation a</code></td><td>0-1-1</td></tr>
+                <tr><td><code>nav a</code></td><td>0-0-2</td></tr>
+                <tr><td><code>[aria-current="page"]</code></td><td>0-1-0</td></tr>
+                </tbody></table></div>
+                <p>Alle Regeln haben dieselbe Herkunft. Die Kategorien werden von links nach rechts verglichen: Keine Regel besitzt eine ID. Bei Klassen und Attributen haben <code>.hauptnavigation a</code> und <code>[aria-current="page"]</code> je eins; bei den Typselektoren entscheidet <code>.hauptnavigation a</code> mit eins gegenüber null. Der Link erscheint deshalb <code>darkblue</code>. Die Reihenfolge spielt keine Rolle mehr.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Absatz mit der Klasse <code>hinweis</code> bleibt schwarz, obwohl <code>.hinweis { color: brown; }</code> im Stylesheet steht. Nenne mögliche Ursachen in der Reihenfolge der Prüfschritte aus diesem Kapitel.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ol>
+                <li>Datei: Ist <code>style.css</code> gespeichert und im <code>head</code> eingebunden?</li>
+                <li>Element: Trägt der Absatz wirklich <code>class="hinweis"</code>, ohne Tippfehler?</li>
+                <li>Selektor: Steht im Stylesheet <code>.hinweis</code> mit Punkt?</li>
+                <li>Syntax: Sind Klammern und Semikolons vollständig, ist der Wert gültig?</li>
+                <li>Herkunft: Setzt ein Inline-Style am Absatz eine andere Farbe?</li>
+                <li>Kaskade: Überstimmt eine spezifischere oder spätere Regel die Farbe?</li>
+                <li>Vererbung: Gilt die Regel überhaupt für den Absatz selbst, oder erbt er nur einen Wert?</li>
+                </ol>
+                <p>Im Inspector zeigt der Bereich Styles, ob die Regel erscheint und ob sie durchgestrichen ist.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-16.md</code>.</p>
+    </footer>
+</body>
+</html>

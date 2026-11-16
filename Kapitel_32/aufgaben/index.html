@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 32 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 32: Eingebettete Inhalte, iframe, object, SVG und canvas</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Wetterkarte von <code>https://wetter.example.com/karte</code> soll eingebettet werden. Das <code>iframe</code> soll einen beschreibenden Titel tragen, keine Herkunftsangabe übermitteln und keine Formulare absenden dürfen. Schreibe das <code>iframe</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;iframe src="https://wetter.example.com/karte"
+        title="Wetterkarte für unsere Region"
+        referrerpolicy="no-referrer"
+        sandbox="allow-scripts"
+        width="600" height="400"&gt;&lt;/iframe&gt;</code></pre>
+                </figure>
+                <ul>
+                <li><code>title</code> benennt den Zweck des eingebetteten Dokuments.</li>
+                <li><code>referrerpolicy="no-referrer"</code> übermittelt keine Herkunftsangabe.</li>
+                <li><code>sandbox</code> schränkt den Kontext ein. Ohne <code>allow-forms</code> darf das Dokument keine Formulare absenden. <code>allow-scripts</code> erlauben wir nur, wenn die Karte Scripts benötigt.</li>
+                </ul>
+                <p>Ob der Anbieter die Einbettung erlaubt und welche Daten er dabei verarbeitet, prüfen wir zusätzlich.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Hauswappen als SVG soll seine Farbe per CSS an die Textfarbe anpassen. Begründe, ob es mit <code>img</code> oder direkt als <code>svg</code> eingebunden wird.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Direkt als <code>svg</code> im HTML. Ein über <code>img</code> eingebundenes SVG ist ein eigenes Dokument, das CSS der Seite erreicht seine Formen nicht. Steht das SVG im HTML, wirken unsere Regeln auf seine Formen. Mit <code>fill="currentColor"</code> übernehmen sie die aktuelle Textfarbe:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;svg viewBox="0 0 24 24" width="48" height="48" role="img" aria-label="Hauswappen"&gt;
+    &lt;path d="M12 2 L22 9 V22 H2 V9 Z" fill="currentColor"/&gt;
+&lt;/svg&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-32.md</code>.</p>
+    </footer>
+</body>
+</html>

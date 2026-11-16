@@ -1,0 +1,160 @@
+/* Gemeinsame Grundgestaltung für alle Seiten */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #222;
+    background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.seitenrahmen {
+    max-inline-size: 70rem;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+h1 {
+    color: #123f67;
+    font-size: 2rem;
+}
+
+h2 {
+    color: #334;
+    font-size: 1.5rem;
+}
+
+h1,
+h2 {
+    line-height: 1.25;
+}
+
+p {
+    max-inline-size: 65ch;
+}
+
+.hauptnavigation {
+    background-color: #e4e8eb;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+}
+
+.hauptnavigation a {
+    color: #123f67;
+}
+
+.pruefen,
+.hinweis {
+    background-color: #fff4b8;
+}
+
+.hinweis {
+    color: #3d3500;
+    padding: 1rem;
+    border: 1px solid #d8c65a;
+    margin-block: 1.5rem;
+}
+
+.dringend {
+    color: #8b0000;
+}
+
+.pruefen.dringend {
+    font-weight: bold;
+}
+
+[aria-current="page"] {
+    font-weight: bold;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.seitenfuss {
+    margin-block-start: 2rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.raumkarte {
+    padding: 1rem;
+    border: 1px solid #d5dadd;
+}
+
+.statuskarte {
+    position: relative;
+    display: flow-root;
+    padding-block-start: 3.5rem;
+}
+
+.status {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+}
+
+.raumkennzeichen {
+    float: inline-start;
+    margin-inline-end: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #123f67;
+}
+
+.hauptnavigation > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.statusleiste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.statusleiste > div {
+    flex: 1 1 10rem;
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+    border: 1px solid #d5dadd;
+}
+
+.statusleiste dd {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #123f67;
+}
+
+.raumliste {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    gap: 1rem;
+}
+
+.steckbrief {
+    display: grid;
+    grid-template-columns: fit-content(40%) minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+}
+
+.steckbrief dt {
+    grid-column: 1 / 2;
+}
+
+.steckbrief dd {
+    grid-column: 2 / 3;
+    margin: 0;
+}
+
+.hausbeschreibung {
+    column-width: 20rem;
+    column-gap: 2rem;
+}

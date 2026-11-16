@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 12 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 12: CSS einbinden und die erste Gestaltung aufbauen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>In dem folgenden Stylesheet wirken zwei Angaben nicht. Finde die Ursachen und bestätige sie mit den DevTools:</p>
+            <figure class="code">
+            <figcaption>CSS</figcaption>
+            <pre><code>p {
+    color: navy
+    font-family: Arial, sans-serif;
+}
+h2 {
+    colour: darkblue;
+}</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ol>
+                <li>Nach <code>color: navy</code> fehlt das Semikolon. Der Browser liest deshalb <code>navy font-family: Arial, sans-serif</code> als einen einzigen Wert für <code>color</code>. Dieser Wert ist ungültig, die gesamte Deklaration wird verworfen. Weder die Farbe noch die Schrift wirken.</li>
+                <li><code>colour</code> ist keine CSS-Eigenschaft (CSS verwendet die amerikanische Schreibweise <code>color</code>). Die Deklaration wird verworfen.</li>
+                </ol>
+                <p>In den DevTools erscheinen beide Deklarationen im Bereich Styles durchgestrichen und mit einem Warnsymbol. Korrigiert:</p>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>p {
+    color: navy;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: darkblue;
+}</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Stylesheet setzt <code>color</code> und <code>background-color</code> an <code>body</code>. Erkläre, warum <code>color</code> alle Absätze einfärbt, <code>background-color</code> dagegen nicht vererbt wird, und warum die Absätze trotzdem auf dieser Hintergrundfarbe erscheinen.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>color</code> ist eine vererbte Eigenschaft: Legt ein Absatz selbst keine Textfarbe fest, übernimmt er den Wert seines Elternelements. <code>background-color</code> wird nicht vererbt; der Anfangswert jedes Elements ist <code>transparent</code>. Die Absätze besitzen also keinen eigenen Hintergrund, und durch ihre durchsichtige Fläche ist der Hintergrund von <code>body</code> zu sehen. Das ist keine Vererbung, sondern Durchscheinen.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-12.md</code>.</p>
+    </footer>
+</body>
+</html>

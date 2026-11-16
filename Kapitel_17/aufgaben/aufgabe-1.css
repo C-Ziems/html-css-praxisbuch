@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p { color: white; }
+.hex { background-color: #000080; }
+.rgb { background-color: rgb(0 0 128); }
+.hsl { background-color: hsl(240 100% 25%); }

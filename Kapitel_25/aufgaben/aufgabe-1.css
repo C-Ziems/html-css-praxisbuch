@@ -1,0 +1,24 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.seite {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    grid-template-areas:
+        "kopf kopf"
+        "navigation inhalt"
+        "fuss fuss";
+    gap: 1rem;
+}
+
+.seite > header { grid-area: kopf; }
+.seite > nav    { grid-area: navigation; }
+.seite > main   { grid-area: inhalt; }
+.seite > footer { grid-area: fuss; }
+
+.seite > * {
+    padding: 1rem;
+    background-color: #e4e8eb;
+}

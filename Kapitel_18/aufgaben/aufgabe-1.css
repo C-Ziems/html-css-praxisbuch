@@ -1,0 +1,15 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid;
+    margin: 10px;
+    background-color: lightblue;
+}
+
+.inhalt { box-sizing: content-box; }
+.rahmen { box-sizing: border-box; }

@@ -1,0 +1,20 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.karte {
+    max-inline-size: 20rem;
+    padding: 1rem;
+    border: 1px solid #999;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .karte {
+        transition: transform 150ms ease;
+    }
+    .karte:hover,
+    .karte:focus-within {
+        transform: translateY(-2px);
+    }
+}

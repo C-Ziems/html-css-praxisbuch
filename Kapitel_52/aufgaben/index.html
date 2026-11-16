@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 52 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 52: Scrollgesteuerte Animationen und View Transitions</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Leiste soll den Lesefortschritt zeigen und mit dem Scrollen der Seite von 0 auf volle Breite wachsen. Sie erscheint nur bei Unterstützung und ohne Präferenz für reduzierte Bewegung. Schreibe HTML und CSS.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;div class="lesefortschritt" aria-hidden="true"&gt;&lt;/div&gt;</code></pre>
+                </figure>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.lesefortschritt {
+    display: none;
+}
+
+@keyframes lesefortschritt {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+@supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .lesefortschritt {
+            display: block;
+            position: fixed;
+            inset-block-start: 0;
+            inset-inline: 0;
+            block-size: 0.25rem;
+            background-color: var(--farbe-akzent);
+            transform-origin: left;
+            animation: lesefortschritt linear;
+            animation-timeline: scroll(root);
+        }
+    }
+}</code></pre>
+                </figure>
+                <p><code>animation-timeline</code> steht nach der Kurzschreibweise <code>animation</code>, weil diese die Timeline zurücksetzt. Die Leiste ist rein dekorativ und deshalb für assistive Technik ausgeblendet.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Scrollgesteuerte Animationen können <code>scroll()</code> oder <code>view()</code> verwenden. Erkläre den Unterschied an je einem Beispiel.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>scroll()</code> verbindet den Fortschritt mit der Scrollposition eines Scrollcontainers, etwa der ganzen Seite: Die Lesefortschrittsleiste aus Aufgabe 1 ist am Seitenanfang leer und am Seitenende voll. <code>view()</code> verbindet den Fortschritt mit der Position eines Elements im sichtbaren Bereich: Ein Bild kann sich beispielsweise einblenden, während es von unten in den Viewport hineinscrollt.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-52.md</code>.</p>
+    </footer>
+</body>
+</html>

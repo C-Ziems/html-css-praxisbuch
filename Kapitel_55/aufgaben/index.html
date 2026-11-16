@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 55 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 55: Sprache, Ruby-Annotationen und Suchbereiche</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Text enthält den Satz „Der Smart Plug Pro trägt die Kennung ZS 2026.“ Gib die englische Sprache des Produktnamens an und nimm die Kennung von automatischer Übersetzung aus.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Der &lt;span lang="en"&gt;Smart Plug Pro&lt;/span&gt; trägt die Kennung
+&lt;span translate="no"&gt;ZS 2026&lt;/span&gt;.&lt;/p&gt;</code></pre>
+                </figure>
+                <p><code>lang="en"</code> sorgt für die richtige Aussprache durch Screenreader und passende Silbentrennung. <code>translate="no"</code> verhindert, dass automatische Übersetzungsdienste die Kennung verändern.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein <code>span</code> steht ohne eigenes <code>lang</code> in einem Absatz mit <code>lang="en"</code>. Erkläre, ob <code>[lang="en"]</code> und ob <code>:lang(en)</code> auf das <code>span</code> zutrifft.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>[lang="en"]</code> trifft nicht zu, denn das <code>span</code> besitzt das Attribut nicht selbst. <code>:lang(en)</code> trifft zu, denn es berücksichtigt die geerbte Sprache. <code>:lang(en)</code> erfasst außerdem Untervarianten wie <code>en-GB</code>, der Attributselektor nur den genauen Wert.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-55.md</code>.</p>
+    </footer>
+</body>
+</html>

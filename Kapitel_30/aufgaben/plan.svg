@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+    <rect width="600" height="400" fill="#f3f5f7"/>
+    <rect x="0" y="0" width="300" height="200" fill="#cfe3f5" stroke="#123f67" stroke-width="3"/>
+    <text x="150" y="105" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">Küche</text>
+    <circle cx="450" cy="300" r="80" fill="#f5dfcf" stroke="#123f67" stroke-width="3"/>
+    <text x="450" y="310" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">Bad</text>
+</svg>

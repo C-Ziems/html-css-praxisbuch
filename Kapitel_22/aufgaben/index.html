@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 22 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 22: Textumfluss mit float, clear und shape-outside</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Absatz soll mit einem großen Anfangsbuchstaben beginnen, den der Text umfließt, und der umgebende Container soll ihn vollständig umschließen. Gestalte den Buchstaben als <code>span</code> mit der Klasse <code>initiale</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;div class="artikeltext"&gt;
+    &lt;p&gt;&lt;span class="initiale"&gt;D&lt;/span&gt;as Haus wurde 2024 vernetzt …&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </figure>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.artikeltext {
+    display: flow-root;
+}
+
+.initiale {
+    float: inline-start;
+    font-size: 3em;
+    line-height: 1;
+    margin-inline-end: 0.25rem;
+}</code></pre>
+                </figure>
+                <p><code>float</code> lässt den Text um den Buchstaben fließen. <code>display: flow-root</code> gibt dem Container einen eigenen Blockformatierungskontext, sodass er den Float in seine Höhe einbezieht, auch wenn der Absatz kurz ist.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Navigation soll ihre Links nebeneinander anordnen. Erkläre, warum wir dafür nicht <code>float</code>, sondern Flexbox verwenden.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>float</code> ist für Textumfluss gedacht. Eine Navigation mit Floats braucht zusätzliche Regeln zum Umschließen und bietet keine einfache Steuerung von Abständen, Umbruch und Ausrichtung. Flexbox ordnet die Einträge entlang einer Achse an, verteilt Zwischenräume mit <code>gap</code>, bricht mit <code>flex-wrap</code> um und richtet die Einträge aneinander aus.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-22.md</code>.</p>
+    </footer>
+</body>
+</html>

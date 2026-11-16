@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 46 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 46: Media Queries und inhaltsbasierte Breakpoints</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Bildergalerie soll einspaltig beginnen und ab 40rem Viewportbreite zwei, ab 64rem drei Spalten zeigen. Schreibe die Regeln in Bereichsschreibweise.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.galerie {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (width &gt;= 40rem) {
+    .galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width &gt;= 64rem) {
+    .galerie {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}</code></pre>
+                </figure>
+                <p>Die Grundregel ist einspaltig. Die Abfragen ergänzen weitere Spalten, sobald der Platz reicht. Die Grenzen sollten aus dem Inhalt abgeleitet werden: Wir prüfen mit stufenlos veränderter Breite, ab wann zwei oder drei Bilder nebeneinander gut wirken.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Schaltflächen sollen nur dann größere Innenabstände erhalten, wenn das wichtigste Zeigegerät ungenau ist, etwa ein Finger. Schreibe die Abfrage.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>@media (pointer: coarse) {
+    button {
+        padding: 0.75rem 1.25rem;
+    }
+}</code></pre>
+                </figure>
+                <p><code>pointer</code> beschreibt das wichtigste Zeigegerät. <code>coarse</code> steht für eine ungenaue Eingabe wie einen Finger. Soll die Regel greifen, sobald irgendein ungenaues Zeigegerät vorhanden ist, verwenden wir <code>any-pointer</code>.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-46.md</code>.</p>
+    </footer>
+</body>
+</html>

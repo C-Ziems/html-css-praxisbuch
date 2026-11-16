@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 39, Aufgabe 2: :is() und :where() im Vergleich</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>:is() und :where() im Vergleich</h1>
+    <p>
+        Nach beiden Regeln folgt die Regel .navigation a mit der Spezifität 0-1-1. Gegen :is(#kopf, .titel)
+        a (1-0-1) verliert sie, der obere Link bleibt dunkelrot. Gegen :where(#fuss, .untertitel) a (0-0-1)
+        gewinnt sie, der untere Link wird grün. Prüfe die Spezifität im Inspector.
+    </p>
+    <nav class="navigation titel"><a href="#">Link mit :is()</a></nav>
+    <nav class="navigation untertitel"><a href="#">Link mit :where()</a></nav>
+</body>
+</html>

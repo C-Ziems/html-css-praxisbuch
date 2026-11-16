@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 34 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 34: Tabellen vertiefen, Messwerte und Fortschritt darstellen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Tabelle besitzt die Zeilen „Wohnzimmer“ und „Küche“. Im Kopf sollen „Temperatur“ und „Luftfeuchte“ jeweils die Spalten „Tag“ und „Nacht“ überspannen. Schreibe den zweistufigen Kopf.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Raumklima&lt;/caption&gt;
+    &lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
+    &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+    &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2" scope="col"&gt;Raum&lt;/th&gt;
+            &lt;th colspan="2" scope="colgroup"&gt;Temperatur&lt;/th&gt;
+            &lt;th colspan="2" scope="colgroup"&gt;Luftfeuchte&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Tag&lt;/th&gt;
+            &lt;th scope="col"&gt;Nacht&lt;/th&gt;
+            &lt;th scope="col"&gt;Tag&lt;/th&gt;
+            &lt;th scope="col"&gt;Nacht&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Wohnzimmer&lt;/th&gt;
+            &lt;td&gt;21&amp;nbsp;°C&lt;/td&gt;
+            &lt;td&gt;18&amp;nbsp;°C&lt;/td&gt;
+            &lt;td&gt;45&amp;nbsp;%&lt;/td&gt;
+            &lt;td&gt;50&amp;nbsp;%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Küche&lt;/th&gt;
+            &lt;td&gt;20&amp;nbsp;°C&lt;/td&gt;
+            &lt;td&gt;17&amp;nbsp;°C&lt;/td&gt;
+            &lt;td&gt;55&amp;nbsp;%&lt;/td&gt;
+            &lt;td&gt;60&amp;nbsp;%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                </figure>
+                <p>Die Spaltengruppen fassen die beiden Tag- und Nachtspalten zusammen. <code>scope="colgroup"</code> ordnet „Temperatur“ und „Luftfeuchte“ ihrer jeweiligen Gruppe zu. Die Zelle „Raum“ überspannt mit <code>rowspan="2"</code> beide Kopfzeilen.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Seite zeigt folgende Angaben: a) den Ladestand des Hausspeichers von 70 %, b) den Fortschritt eines Firmware-Updates, c) eine Luftfeuchte von 55 % auf einer Skala von 0 bis 100 % mit einem günstigen Bereich von 40 bis 60 %, d) einen Download unbekannter Größe. Wähle für jede Angabe <code>meter</code> oder <code>progress</code> und gib für c) die vollständigen Attribute an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) <code>meter</code>: ein Messwert in einem bekannten Bereich</p>
+                <p>b) <code>progress</code>: der Stand einer Aufgabe</p>
+                <p>c) <code>meter</code>:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;meter min="0" max="100" low="40" high="60" optimum="50" value="55"&gt;55&amp;nbsp;%&lt;/meter&gt;</code></pre>
+                </figure>
+                <p>d) <code>progress</code> ohne <code>value</code>: ein unbestimmter Fortschritt</p>
+                <p>Zu jeder grafischen Anzeige gehört eine Beschriftung und ein sichtbarer Zahlenwert.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-34.md</code>.</p>
+    </footer>
+</body>
+</html>

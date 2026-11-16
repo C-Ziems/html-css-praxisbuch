@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 39 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 39: Fortgeschrittene Selektoren und Pseudoklassen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Stylesheet soll folgende Elemente auswählen: a) den Absatz unmittelbar nach einer <code>h2</code>, b) alle Links, deren Adresse mit <code>https://</code> beginnt, c) jede zweite Zeile im <code>tbody</code> einer Tabelle, d) ein <code>div.formularfeld</code>, das ein Feld mit <code>:user-invalid</code> enthält. Schreibe die passenden Selektoren.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>h2 + p { }                                  /* a) */
+a[href^="https://"] { }                     /* b) */
+tbody tr:nth-child(even) { }                /* c) */
+div.formularfeld:has(:user-invalid) { }     /* d) */</code></pre>
+                </figure>
+                <p>a) <code>+</code> wählt nur das unmittelbar folgende Geschwister. b) <code>^=</code> prüft den Anfang des Attributwerts. c) <code>even</code> entspricht <code>2n</code>. d) <code>:has()</code> prüft vom Container aus, ob ein Nachfahre zutrifft.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Zwei Regeln verwenden die Selektoren <code>:is(#kopf, .titel) a</code> und <code>:where(#kopf, .titel) a</code>. Bestimme ihre Spezifität und erkläre den Unterschied.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ul>
+                <li><code>:is(#kopf, .titel) a</code>: 1-0-1. <code>:is()</code> übernimmt die Spezifität des spezifischsten Arguments, hier <code>#kopf</code>, unabhängig davon, welches Argument tatsächlich zutrifft.</li>
+                <li><code>:where(#kopf, .titel) a</code>: 0-0-1. <code>:where()</code> trägt keine Spezifität bei, es zählt nur <code>a</code>.</li>
+                </ul>
+                <p>Mit <code>:where()</code> lassen sich Grundregeln schreiben, die später leicht überstimmt werden können.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-39.md</code>.</p>
+    </footer>
+</body>
+</html>

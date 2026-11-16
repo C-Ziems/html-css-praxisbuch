@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 28 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 28: Bilder und Bildunterschriften</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite enthält drei Bilder: a) ein Foto des Thermostats in einem Gerätesteckbrief, b) eine dekorative Wellenlinie zwischen zwei Abschnitten, c) ein Logo, das als Link zur Startseite dient. Lege für jedes Bild den Alternativtext fest und begründe ihn.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) <code>alt="Heizkörperthermostat mit Drehregler und Display"</code> – Das Foto zeigt, wie das Gerät aussieht. Der Text beschreibt, was für den Steckbrief wichtig ist.</p>
+                <p>b) <code>alt=""</code> – Die Linie ist rein dekorativ. Ein leerer Alternativtext sorgt dafür, dass Screenreader sie übergehen.</p>
+                <p>c) <code>alt="Startseite"</code> oder <code>alt="Mein Smart Home – Startseite"</code> – Bei einem Bildlink beschreibt der Alternativtext das Linkziel, nicht das Aussehen des Logos.</p>
+                <p>Die Formulierungen sind Beispiele. Entscheidend ist, welche Aufgabe das Bild an seiner Stelle erfüllt.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Das Foto ist 400 × 300 Pixel groß und zeigt die Vorderseite eines weißen Heizkörperthermostats in einem Gerätesteckbrief. Die folgende Zeile lässt sich an drei Stellen verbessern. Finde die Verbesserungen und schreibe eine korrigierte Fassung:</p>
+            <figure class="code">
+            <figcaption>HTML</figcaption>
+            <pre><code>&lt;img src="bilder/thermostat.jpg" alt="Bild von einem Thermostat" width="400px"&gt;</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;img src="bilder/thermostat.jpg" alt="Vorderseite des weißen Heizkörperthermostats"
+     width="400" height="300"&gt;</code></pre>
+                </figure>
+                <ol>
+                <li>„Bild von“ ist überflüssig, denn Screenreader kündigen das Bild bereits an. Der neue Text nennt, was das Foto im Steckbrief zeigt.</li>
+                <li><code>width</code> erwartet eine Zahl ohne Einheit.</li>
+                <li><code>height</code> fehlt. Mit beiden Angaben kennt der Browser das Seitenverhältnis und reserviert vor dem Laden den passenden Platz. Die Werte entsprechen den tatsächlichen Abmessungen der Datei, hier 400 × 300 Pixel.</li>
+                </ol>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-28.md</code>.</p>
+    </footer>
+</body>
+</html>

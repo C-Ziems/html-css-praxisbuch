@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 38 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 38: Validierung und Formularstyling</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Pflichtfeld „Gerätekennung“ soll genau zwei Großbuchstaben, ein Leerzeichen und vier Ziffern verlangen, etwa „HT 2026“. Schreibe das Feld mit einem sichtbaren Hinweis, der mit dem Feld verbunden ist.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;div class="formularfeld"&gt;
+    &lt;label for="kennung"&gt;Gerätekennung&lt;/label&gt;
+    &lt;input type="text" id="kennung" name="kennung" required
+           pattern="[A-Z]{2} [0-9]{4}" aria-describedby="kennung-hinweis"&gt;
+    &lt;p id="kennung-hinweis" class="feldhinweis"&gt;
+        Zwei Großbuchstaben, ein Leerzeichen und vier Ziffern, zum Beispiel HT 2026.
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </figure>
+                <p><code>pattern</code> gilt für den gesamten Wert. Der sichtbare Hinweis erklärt die Regel, bevor ein Fehler entsteht. <code>aria-describedby</code> ordnet ihn dem Feld zu, sodass Screenreader ihn zusammen mit dem Feld vorlesen.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Formular zeigt ungültige Eingaben mit einem Fehlerrahmen an. Erkläre, warum wir ihn mit <code>:user-invalid</code> statt mit <code>:invalid</code> anzeigen.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Ein leeres Pflichtfeld entspricht schon beim Laden der Seite <code>:invalid</code>. Ein Fehlerrahmen mit <code>:invalid</code> würde deshalb einen Fehler anzeigen, bevor jemand etwas eingegeben hat. <code>:user-invalid</code> trifft erst zu, nachdem mit dem Feld gearbeitet oder das Absenden versucht wurde. Die Rückmeldung kommt so zum passenden Zeitpunkt.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-38.md</code>.</p>
+    </footer>
+</body>
+</html>

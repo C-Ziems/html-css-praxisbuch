@@ -1,0 +1,42 @@
+/* Gemeinsame Grundgestaltung für alle Seiten */
+body {
+    color: dimgray;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 2rem;
+}
+
+h2 {
+    color: midnightblue;
+    font-size: 1.5rem;
+}
+
+.hauptnavigation {
+    background-color: gainsboro;
+}
+
+.hauptnavigation a {
+    color: darkblue;
+}
+
+.pruefen,
+.hinweis {
+    background-color: lightyellow;
+}
+
+.dringend {
+    color: darkred;
+}
+
+.pruefen.dringend {
+    font-weight: bold;
+}
+
+[aria-current="page"] {
+    font-weight: bold;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 53 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 53: Aufklappbereiche, Dialoge und Popover</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite zeigt drei häufige Fragen, deren Antworten sich aufklappen lassen. Es soll immer nur eine Antwort geöffnet sein, und die erste ist beim Laden geöffnet. Lege die Seite an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;h2&gt;Häufige Fragen&lt;/h2&gt;
+&lt;details name="faq" open&gt;
+    &lt;summary&gt;Wie wechsle ich die Batterie?&lt;/summary&gt;
+    &lt;p&gt;…&lt;/p&gt;
+&lt;/details&gt;
+&lt;details name="faq"&gt;
+    &lt;summary&gt;Wie setze ich das Gerät zurück?&lt;/summary&gt;
+    &lt;p&gt;…&lt;/p&gt;
+&lt;/details&gt;
+&lt;details name="faq"&gt;
+    &lt;summary&gt;Wo finde ich die Seriennummer?&lt;/summary&gt;
+    &lt;p&gt;…&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+                </figure>
+                <p>Der gemeinsame <code>name</code> bildet eine Gruppe, in der sich jeweils nur ein Bereich öffnen lässt. Browser ohne diese Unterstützung öffnen die Bereiche unabhängig voneinander; der Inhalt bleibt erreichbar.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Schaltfläche „Hilfe“ soll ohne Script ein Popover mit einem kurzen Hilfetext öffnen. Schreibe das HTML und erkläre, worin sich das Popover von einem modalen Dialog unterscheidet.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;button type="button" popovertarget="hilfe"&gt;Hilfe&lt;/button&gt;
+&lt;div id="hilfe" popover&gt;
+    &lt;p&gt;Mit den Pfeiltasten wählen Sie einen Raum aus.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </figure>
+                <p>Ein Popover erscheint über der Seite, macht sie aber nicht inaktiv: Die übrige Seite bleibt bedienbar, und ein Klick außerhalb oder Escape schließt es. Ein modaler Dialog macht die übrige Seite inaktiv, bis er geschlossen wird. Er eignet sich für Arbeitsschritte, die zuerst abgeschlossen werden müssen.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-53.md</code>.</p>
+    </footer>
+</body>
+</html>

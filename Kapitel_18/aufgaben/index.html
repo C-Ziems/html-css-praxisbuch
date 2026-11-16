@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 18 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 18: Boxmodell, Größen und Abstände</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Element hat <code>width: 300px; padding: 20px; border: 2px solid; margin: 10px;</code>. Bestimme für <code>content-box</code> und für <code>border-box</code>, wie breit die Box bis zur Rahmenkante ist und wie viel Platz sie einschließlich Außenabstand benötigt.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <div class="tabelle"><table>
+                <thead><tr><th scope="col"></th><th scope="col">bis zur Rahmenkante</th><th scope="col">mit Außenabstand</th></tr></thead>
+                <tbody>
+                <tr><td><code>content-box</code></td><td>300 + 2 × 20 + 2 × 2 = 344 px</td><td>344 + 2 × 10 = 364 px</td></tr>
+                <tr><td><code>border-box</code></td><td>300 px</td><td>320 px</td></tr>
+                </tbody></table></div>
+                <p>Bei <code>border-box</code> schließt <code>width</code> Innenabstand und Rahmen ein; für den Inhalt bleiben 300 − 40 − 4 = 256 px.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Zwei unmittelbar aufeinanderfolgende Absätze stehen im normalen Blockfluss, ohne weitere Inhalte dazwischen. Der erste hat <code>margin-bottom: 1rem</code>, der zweite <code>margin-top: 1.5rem</code>. Gib den Abstand zwischen ihren Rahmenkanten an und begründe ihn.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Der Abstand beträgt 1,5rem. Im normalen Blockfluss fallen die vertikalen Außenabstände unmittelbar aufeinanderfolgender Blockboxen zusammen, wenn nichts zwischen ihnen steht. Bei positiven Werten gilt der größere; sie werden nicht addiert.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-18.md</code>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 17 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 17: Farben und Hintergründe</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Die Farbe <code>navy</code> soll in verschiedenen Schreibweisen vorliegen. Schreibe sie als Hexadezimalwert, mit <code>rgb()</code> und mit <code>hsl()</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>color: #000080;
+color: rgb(0 0 128);
+color: hsl(240 100% 25%);</code></pre>
+                </figure>
+                <p>Der <code>hsl()</code>-Wert ist gerundet; genau entspricht <code>navy</code> einer Helligkeit von etwa 25,1 %.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Hinweis erhält einmal <code>background-color: rgb(255 255 0 / 0.5);</code> und einmal <code>background-color: yellow; opacity: 0.5;</code>. Vergleiche beide Regeln und erkläre, warum der Text im zweiten Fall blasser erscheint.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Im ersten Fall ist nur die Hintergrundfarbe halb durchsichtig. Der Text behält seine volle Deckkraft. <code>opacity: 0.5</code> wirkt dagegen auf das ganze Element einschließlich Text, Rahmen und Kindelementen. Deshalb erscheint der Text im zweiten Fall blasser und hat weniger Kontrast.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-17.md</code>.</p>
+    </footer>
+</body>
+</html>

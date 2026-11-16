@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 36, Aufgabe 1: Passende Eingabetypen</title>
+</head>
+<body>
+    <h1>Passende Eingabetypen</h1>
+    <p>
+        Probiere die Felder aus, auf dem Smartphone oder in der Geräteansicht der DevTools: Die E-Mail-
+        Adresse und die Postleitzahl bieten passende Tastaturen, die Temperatur lässt sich in halben Grad
+        einstellen.
+    </p>
+    <form action="aufgabe-1.html">
+        <p>
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+        </p>
+        <p>
+            <label for="plz">Postleitzahl</label>
+            <input type="text" id="plz" name="plz" inputmode="numeric" autocomplete="postal-code">
+        </p>
+        <p>
+            <label for="temperatur">Raumtemperatur in °C</label>
+            <input type="number" id="temperatur" name="temperatur" min="15" max="25" step="0.5">
+        </p>
+        <p>
+            <label for="liefertermin">Liefertermin</label>
+            <input type="date" id="liefertermin" name="liefertermin">
+        </p>
+        <button type="submit">Absenden</button>
+    </form>
+</body>
+</html>

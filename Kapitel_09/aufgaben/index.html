@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 9 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 9: Listen und Beschreibungslisten</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite enthält folgende Inhalte: a) die Zutaten eines Rezepts, b) die Schritte eines Batteriewechsels, c) Geräte mit ihrem Batterietyp, d) eine Rangliste der drei Geräte mit dem höchsten Verbrauch, absteigend sortiert. Wähle für jeden Inhalt <code>ul</code>, <code>ol</code> oder <code>dl</code> und begründe deine Wahl: Prüfe bei <code>ul</code> und <code>ol</code>, ob das Vertauschen der Einträge die Aussage verändert, und bei <code>dl</code>, welche Namen und Werte einander zugeordnet sind.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) <code>ul</code>: Werden die Zutaten vertauscht, ändert sich die Aussage nicht.</p>
+                <p>b) <code>ol</code>: Die Schritte müssen in dieser Reihenfolge ausgeführt werden; ein Vertauschen ändert die Anleitung.</p>
+                <p>c) <code>dl</code>: Hier hilft nicht die Vertauschprobe, sondern die Zuordnung: Jedem Gerät (<code>dt</code>) wird ein Wert, der Batterietyp (<code>dd</code>), zugeordnet.</p>
+                <p>d) <code>ol</code>: Die absteigende Rangfolge ist Teil der Information; ein Vertauschen würde die Aussage verfälschen.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Die folgende Verschachtelung enthält einen Fehler. Finde ihn und korrigiere den Ausschnitt:</p>
+            <figure class="code">
+            <figcaption>HTML</figcaption>
+            <pre><code>&lt;ul&gt;
+    &lt;li&gt;Erdgeschoss&lt;/li&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Wohnzimmer&lt;/li&gt;
+        &lt;li&gt;Küche&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;li&gt;Obergeschoss&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Die Unterliste steht zwischen zwei Listeneinträgen. Sie gehört in den Eintrag, den sie näher beschreibt:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Erdgeschoss
+        &lt;ul&gt;
+            &lt;li&gt;Wohnzimmer&lt;/li&gt;
+            &lt;li&gt;Küche&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Obergeschoss&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-09.md</code>.</p>
+    </footer>
+</body>
+</html>

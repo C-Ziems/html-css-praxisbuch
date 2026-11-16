@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 37, Aufgabe 2: select und datalist</title>
+</head>
+<body>
+    <h1>select und datalist</h1>
+    <p>
+        Der Raum lässt sich nur aus den fünf Werten wählen. Bei der Gerätebezeichnung erscheinen Vorschläge,
+        du kannst aber auch eine eigene Bezeichnung eintippen.
+    </p>
+    <form action="aufgabe-2.html">
+        <p>
+            <label for="raum">Raum</label>
+            <select id="raum" name="raum">
+                <option>Wohnzimmer</option>
+                <option>Küche</option>
+                <option>Schlafzimmer</option>
+                <option>Arbeitszimmer</option>
+                <option>Bad</option>
+            </select>
+        </p>
+        <p>
+            <label for="geraet">Gerätebezeichnung</label>
+            <input type="text" id="geraet" name="geraet" list="geraetevorschlaege">
+            <datalist id="geraetevorschlaege">
+                <option value="Heizkörperthermostat"></option>
+                <option value="Rauchmelder"></option>
+                <option value="Bewegungsmelder"></option>
+            </datalist>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 34, Aufgabe 1: Zweistufiger Tabellenkopf</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Zweistufiger Tabellenkopf</h1>
+    <p>
+        „Temperatur“ und „Luftfeuchte“ überspannen jeweils zwei Spalten, „Raum“ beide Kopfzeilen.
+    </p>
+    <table>
+        <caption>Raumklima</caption>
+        <colgroup><col></colgroup>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2" scope="col">Raum</th>
+                <th colspan="2" scope="colgroup">Temperatur</th>
+                <th colspan="2" scope="colgroup">Luftfeuchte</th>
+            </tr>
+            <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Nacht</th>
+                <th scope="col">Tag</th>
+                <th scope="col">Nacht</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Wohnzimmer</th>
+                <td>21&nbsp;°C</td>
+                <td>18&nbsp;°C</td>
+                <td>45&nbsp;%</td>
+                <td>50&nbsp;%</td>
+            </tr>
+            <tr>
+                <th scope="row">Küche</th>
+                <td>20&nbsp;°C</td>
+                <td>17&nbsp;°C</td>
+                <td>55&nbsp;%</td>
+                <td>60&nbsp;%</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

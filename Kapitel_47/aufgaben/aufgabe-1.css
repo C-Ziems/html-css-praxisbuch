@@ -1,0 +1,30 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.schmal { inline-size: 15rem; margin-bottom: 1rem; }
+.breit { inline-size: 30rem; max-inline-size: 100%; }
+
+.produktkarte {
+    container: produktkarte / inline-size;
+    border: 1px solid #999;
+}
+
+.produktkarte-inhalt {
+    display: grid;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.produktkarte img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+@container produktkarte (inline-size >= 20rem) {
+    .produktkarte-inhalt {
+        grid-template-columns: 8rem 1fr;
+        align-items: start;
+    }
+}

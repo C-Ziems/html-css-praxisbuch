@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 29 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 29: Responsive Bilder</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Bild erscheint auf schmalen Bildschirmen in voller Viewportbreite, sonst in einer höchstens 40rem breiten Spalte. Es liegt in den Breiten 400, 800 und 1600 Pixel vor. Schreibe <code>srcset</code> und <code>sizes</code> dafür.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;img src="bilder/garten-800.jpg"
+     srcset="bilder/garten-400.jpg 400w,
+             bilder/garten-800.jpg 800w,
+             bilder/garten-1600.jpg 1600w"
+     sizes="(min-width: 40rem) 40rem, 100vw"
+     alt="…" width="1600" height="1067"&gt;</code></pre>
+                </figure>
+                <p>Die Breitendeskriptoren nennen die tatsächliche Pixelbreite jeder Datei. <code>sizes</code> beschreibt die erwartete Darstellungsbreite: ab einer Viewportbreite von 40rem höchstens 40rem, darunter die volle Viewportbreite. Ziehen Innenabstände des Seitenrahmens noch Platz ab, kann die Bedingung entsprechend angepasst werden. Aus diesen Angaben und der Pixeldichte wählt der Browser eine Datei.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Für ein Foto liegen zwei unterschiedlich zugeschnittene Dateien vor: eine breite Aufnahme für große Ansichten und ein quadratischer Ausschnitt mit dem wichtigsten Motiv für schmale Ansichten. Erkläre, warum <code>srcset</code> allein diese Auswahl nicht beschreibt, und skizziere eine Lösung mit <code>picture</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>srcset</code> mit Breitenangaben beschreibt Varianten desselben Motivs in verschiedenen Auflösungen. Der Browser darf daraus frei wählen, etwa nach Pixeldichte oder Datenvolumen. Ein anderer Bildausschnitt ist dagegen eine gestalterische Entscheidung, die wir dem Browser verbindlich vorgeben müssen. Dafür brauchen wir <code>picture</code> mit einer <code>source</code> und einer Medienbedingung:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;picture&gt;
+    &lt;source media="(max-width: 30rem)"
+            srcset="bilder/haus-quadrat-600.jpg"
+            width="600" height="600"&gt;
+    &lt;img src="bilder/haus-quer-1200.jpg" alt="Außenansicht unseres Hauses"
+         width="1200" height="800"&gt;
+&lt;/picture&gt;</code></pre>
+                </figure>
+                <p>Das <code>img</code> trägt den Alternativtext für alle Varianten. Beide Ausschnitte müssen dieselbe Bildaussage vermitteln.</p>
+                <p>Mit <code>object-fit</code> und <code>object-position</code> aus Kapitel 28 könnten wir die breite Aufnahme zwar ebenfalls quadratisch zuschneiden. Der Browser lädt dann aber die ganze breite Datei, und der Ausschnitt ist nur so gut wie die gewählte Position. Eine eigens vorbereitete Datei zeigt das Motiv gezielt und spart auf schmalen Geräten Daten.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-29.md</code>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 24 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 24: CSS Grid: Flexible Raster aufbauen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Kartenübersicht soll so viele Spalten zeigen, wie passen, jeweils mindestens 12rem breit, mit 1rem Abstand. Schreibe <code>grid-template-columns</code> und erkläre, warum <code>min(12rem, 100%)</code> statt <code>12rem</code> steht.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.kartenuebersicht {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    gap: 1rem;
+}</code></pre>
+                </figure>
+                <p>Mit <code>minmax(12rem, 1fr)</code> wäre jede Spalte mindestens 12rem breit, auch wenn der Container schmaler ist. Die Karte würde dann über den Rand hinausragen. <code>min(12rem, 100%)</code> begrenzt die Untergrenze auf die verfügbare Breite.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Spalte enthält ein sehr langes Wort. Erkläre an diesem Beispiel den Unterschied zwischen <code>1fr 1fr</code> und <code>minmax(0, 1fr) minmax(0, 1fr)</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Eine <code>1fr</code>-Spur besitzt eine inhaltsabhängige Untergrenze: Sie wird nicht schmaler als ihr breitester nicht umbrechbarer Inhalt. Ein sehr langes Wort macht diese Spalte deshalb breiter, und die Spalten sind nicht mehr gleich breit. Mit <code>minmax(0, 1fr)</code> entfällt diese Untergrenze, beide Spalten bleiben gleich breit. Das lange Wort ragt dann jedoch über seine Spalte hinaus, wenn wir ihm keinen Umbruch erlauben, etwa mit <code>overflow-wrap: anywhere</code>.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-24.md</code>.</p>
+    </footer>
+</body>
+</html>

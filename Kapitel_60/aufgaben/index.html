@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 60 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 60: Validierung, Kompatibilität und @supports</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Der Nu Html Checker meldet zu <code>&lt;p&gt;&lt;h3&gt;Hinweis&lt;/h3&gt; Text&lt;/p&gt;</code>: „No p element in scope but a p end tag seen.“ Erkläre, wie diese Meldung entsteht, und korrigiere den Ausschnitt.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Ein Absatz darf keine Überschrift enthalten. Beim Einlesen beendet der Browser den Absatz deshalb automatisch, sobald <code>&lt;h3&gt;</code> beginnt. Das spätere <code>&lt;/p&gt;</code> findet keinen offenen Absatz mehr, daher die Meldung. Im DOM entstehen ein leerer Absatz, die Überschrift, der Text außerhalb eines Absatzes und ein weiterer leerer Absatz.</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;h3&gt;Hinweis&lt;/h3&gt;
+&lt;p&gt;Text&lt;/p&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Kartenliste ist bereits ein Grid mit mehreren Spalten. Jede Karte besteht aus Überschrift, Text und Fußbereich und soll diese drei Teile mit <code>subgrid</code> an gemeinsamen Zeilen der Liste ausrichten. Ohne Unterstützung für <code>subgrid</code> behält sie ihr einfaches Layout. Schreibe die Regel mit <code>@supports</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>@supports (grid-template-rows: subgrid) {
+    .karte {
+        display: grid;
+        grid-row: span 3;
+        grid-template-rows: subgrid;
+    }
+}</code></pre>
+                </figure>
+                <p>Das Raster der Kartenliste legt die Spalten fest; ihre Zeilen entstehen implizit. Jede Karte überspannt mit <code>grid-row: span 3</code> drei dieser Zeilen, eine je Bestandteil, und übernimmt sie mit <code>grid-template-rows: subgrid</code>. Erst dieses Zusammenspiel richtet die Inhalte aus; <code>@supports</code> allein richtet kein Subgrid ein. Unterstützt der Browser <code>subgrid</code>, übernehmen die Karten diese Zeilen, und Überschriften, Texte und Fußbereiche benachbarter Karten stehen auf gleicher Höhe. Ohne Unterstützung bleibt das einfache Layout erhalten.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-60.md</code>.</p>
+    </footer>
+</body>
+</html>

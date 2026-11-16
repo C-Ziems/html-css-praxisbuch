@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 56, Aufgabe 1: Script mit defer</title>
+    <script src="aufgabe-1.js" defer></script>
+</head>
+<body>
+    <h1>Script mit defer</h1>
+    <p>
+        Das Script steht im head, wird aber erst nach dem Einlesen des Dokuments ausgeführt und findet
+        deshalb den Absatz unten. Schalte JavaScript in den DevTools-Einstellungen aus und lade neu: Dann
+        erscheint der noscript-Hinweis. Im Buch liegt die Datei in js/start.js; hier steht sie als
+        aufgabe-1.js im selben Ordner.
+    </p>
+    <noscript>
+        <p>Einige Zusatzfunktionen benötigen JavaScript. Alle Inhalte sind auch ohne sie verfügbar.</p>
+    </noscript>
+    <p id="status">Das Script wurde noch nicht ausgeführt.</p>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Gemeinsame Grundgestaltung für alle Seiten */
+:root {
+    --farbe-text: #222;
+    --farbe-text-ergaenzend: #555;
+    --farbe-hintergrund: #f7f7f7;
+    --farbe-akzent: #123f67;
+    --farbe-ueberschrift: #334;
+    --farbe-rahmen: #d5dadd;
+    --farbe-flaeche-abgesetzt: #e4e8eb;
+    --farbe-hinweis-text: #3d3500;
+    --farbe-hinweis-hintergrund: #fff4b8;
+    --farbe-hinweis-rahmen: #d8c65a;
+    --abstand-klein: 0.5rem;
+    --abstand-mittel: 1rem;
+    --abstand-gross: 2rem;
+    --schrift-standard: Arial, Helvetica, sans-serif;
+    --radius-standard: 0.5rem;
+    --schatten-karte: 0 0.2rem 0.6rem rgb(0 0 0 / 0.08);
+    --farbe-link-besucht: #663399;
+    --farbe-feld-hintergrund: #fff;
+    --farbe-formularrahmen: #777;
+    --farbe-dringend: #8b0000;
+    --farbe-fehler: #8b0000;
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --farbe-text: #e8e8e8;
+        --farbe-text-ergaenzend: #b8c0c7;
+        --farbe-hintergrund: #181a1b;
+        --farbe-akzent: #9ec9f0;
+        --farbe-ueberschrift: #d8dde2;
+        --farbe-rahmen: #555b60;
+        --farbe-flaeche-abgesetzt: #292d30;
+        --farbe-hinweis-text: #f5e9a8;
+        --farbe-hinweis-hintergrund: #3b3516;
+        --farbe-hinweis-rahmen: #9b8c3e;
+        --farbe-link-besucht: #d7b5ff;
+        --farbe-feld-hintergrund: #23272a;
+        --farbe-formularrahmen: #939ba1;
+        --farbe-dringend: #ffb4ab;
+        --farbe-fehler: #ffb4ab;
+        --schatten-karte:
+            0 0.2rem 0.6rem rgb(0 0 0 / 0.35);
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --farbe-rahmen: currentColor;
+        --farbe-formularrahmen: currentColor;
+        --schatten-karte: none;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--farbe-text);
+    background-color: var(--farbe-hintergrund);
+    font-family: var(--schrift-standard);
+    line-height: 1.5;
+}
+
+h1 {
+    color: var(--farbe-akzent);
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+h2 {
+    color: var(--farbe-ueberschrift);
+    font-size: 1.5rem;
+}
+
+h3 {
+    color: var(--farbe-ueberschrift);
+    font-size: 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+p {
+    max-inline-size: 65ch;
+}
+
+dt {
+    font-weight: bold;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+audio,
+video {
+    display: block;
+    max-inline-size: 100%;
+}
+
+video {
+    block-size: auto;
+}
+
+a {
+    color: var(--farbe-akzent);
+    text-underline-offset: 0.2em;
+}
+
+a:visited {
+    color: var(--farbe-link-besucht);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+:target {
+    scroll-margin-block-start: var(--abstand-mittel);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+html {
+    scrollbar-gutter: stable;
+}

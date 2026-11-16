@@ -1,0 +1,3 @@
+@layer basis, komponenten;
+@import url("css/basis.css") layer(basis);
+@import url("css/komponenten.css") layer(komponenten);

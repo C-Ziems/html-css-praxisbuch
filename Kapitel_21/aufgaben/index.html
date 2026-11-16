@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 21 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 21: Positionierung und Stapelreihenfolge</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Abzeichen „Neu“ soll oben rechts in einer Karte stehen. Schreibe den HTML-Ausschnitt und das CSS.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;article class="karte"&gt;
+    &lt;h3&gt;Thermostat&lt;/h3&gt;
+    &lt;p class="abzeichen"&gt;Neu&lt;/p&gt;
+    &lt;p&gt;Regelt die Raumtemperatur.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                </figure>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.karte {
+    position: relative;
+}
+
+.karte &gt; h3 {
+    padding-right: 4rem;
+}
+
+.abzeichen {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin: 0;
+}</code></pre>
+                </figure>
+                <p><code>position: relative</code> macht die Karte zum Bezug für das absolut positionierte Abzeichen. Der Innenabstand der Überschrift verhindert, dass das Abzeichen den Titel überdeckt.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Die Boxen A und B sind positionierte Geschwister im selben Stacking Context. A hat <code>z-index: 3</code> und bildet damit einen eigenen Stacking Context, ein Kind darin hat <code>z-index: 100</code>. B hat <code>z-index: 5</code>. Gib an, was oben liegt, und begründe deine Antwort.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Box B liegt oben, auch über dem Kind mit <code>z-index: 100</code>. A und B werden im gemeinsamen übergeordneten Stacking Context verglichen. Box A bildet zugleich einen eigenen Stacking Context. Der Wert 100 entscheidet nur innerhalb von A. Nach außen wird A als Ganzes mit <code>z-index: 3</code> gegen B mit <code>z-index: 5</code> verglichen.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-21.md</code>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 36, Aufgabe 2: Checkboxen und Radiobuttons</title>
+</head>
+<body>
+    <h1>Checkboxen und Radiobuttons</h1>
+    <p>
+        Bei der Benachrichtigung lassen sich beide, eine oder keine Option wählen. Bei der Versandart
+        schließt jede Wahl die andere aus, weil beide Radiobuttons denselben name tragen.
+    </p>
+    <form action="aufgabe-2.html">
+        <fieldset>
+            <legend>Benachrichtigung</legend>
+            <label><input type="checkbox" name="benachrichtigung" value="email"> E-Mail</label>
+            <label><input type="checkbox" name="benachrichtigung" value="sms"> SMS</label>
+        </fieldset>
+        <fieldset>
+            <legend>Versandart</legend>
+            <label>
+                <input type="radio" name="versand" value="standard" checked>
+                Standard
+            </label>
+            <label>
+                <input type="radio" name="versand" value="express">
+                Express
+            </label>
+        </fieldset>
+        <button type="submit">Absenden</button>
+    </form>
+</body>
+</html>

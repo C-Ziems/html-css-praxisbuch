@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 23 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 23: Flexbox</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Fußzeile enthält drei Links: Zwei stehen links, der dritte rechts abgesetzt, und bei Platzmangel brechen sie um. Gestalte die Fußzeile mit Flexbox.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;footer class="fusszeile"&gt;
+    &lt;a href="kontakt.html"&gt;Kontakt&lt;/a&gt;
+    &lt;a href="hilfe.html"&gt;Hilfe&lt;/a&gt;
+    &lt;a class="nach-oben" href="#seitenanfang"&gt;Nach oben&lt;/a&gt;
+&lt;/footer&gt;</code></pre>
+                </figure>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.fusszeile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nach-oben {
+    margin-inline-start: auto;
+}</code></pre>
+                </figure>
+                <p>Der automatische Außenabstand nimmt den freien Raum vor dem dritten Link auf und setzt ihn nach rechts ab. <code>flex-wrap: wrap</code> erlaubt einen Umbruch bei Platzmangel.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Link erhält <code>order: -1</code>. Erkläre, warum er dadurch optisch nach vorn rückt, die Tastaturreihenfolge aber nicht ändert, und wann das zum Problem wird.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>order</code> verändert nur die sichtbare Anordnung. Die Reihenfolge im DOM bleibt gleich, und nach ihr richten sich Tabulatortaste und Screenreader. Steht ein Link sichtbar vorn, wird aber erst zuletzt fokussiert, springt der Fokus scheinbar ungeordnet über die Seite. Das verwirrt besonders Menschen, die mit der Tastatur arbeiten und gleichzeitig auf den Bildschirm sehen. Soll die Reihenfolge für alle gelten, ändern wir sie im HTML.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-23.md</code>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 38, Aufgabe 2: :invalid und :user-invalid</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>:invalid und :user-invalid</h1>
+    <p>
+        Beim Laden zeigt nur das erste Feld einen roten Rahmen, obwohl beide leer sind. Das zweite Feld
+        reagiert erst, nachdem du hineingeklickt und es wieder verlassen oder das Formular abgeschickt hast.
+    </p>
+    <form action="aufgabe-2.html">
+        <p>
+            <label for="sofort">Mit :invalid</label>
+            <input type="text" id="sofort" name="sofort" required>
+        </p>
+        <p>
+            <label for="spaeter">Mit :user-invalid</label>
+            <input type="text" id="spaeter" name="spaeter" required>
+        </p>
+        <button type="submit">Absenden</button>
+    </form>
+</body>
+</html>

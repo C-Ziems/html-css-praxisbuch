@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 43 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 43: Rahmen, Konturen, Schatten und visuelle Details</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Hinweisbox soll eine 4 Pixel starke Kante am Zeilenanfang, eine Rundung aus einem Token und einen dezenten Schatten erhalten. Gestalte die Box.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.hinweisbox {
+    padding: var(--abstand-mittel);
+    border: 1px solid var(--farbe-rahmen);
+    border-inline-start-width: 4px;
+    border-radius: var(--radius-standard);
+    box-shadow: var(--schatten-karte);
+}</code></pre>
+                </figure>
+                <p><code>border-inline-start-width</code> setzt die verstärkte Kante an den Zeilenanfang, auch bei anderer Schreibrichtung. Rundung und Schatten verwenden die vorhandenen Tokens.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Stylesheet zeigt den Fokus mit <code>outline</code>. Erkläre, warum wir dafür nicht <code>border</code> verwenden und warum <code>outline: none</code> ohne Ersatz ein Problem ist.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Ein Rahmen gehört zur Box und beansprucht Platz. Erscheint er erst beim Fokus, wird das Element größer, und benachbarte Inhalte verschieben sich. <code>outline</code> zeichnet eine Kontur ohne Platzbedarf, die Anordnung bleibt stabil. <code>outline: none</code> ohne andere sichtbare Kennzeichnung nimmt Menschen, die mit der Tastatur arbeiten, die Information, welches Element gerade bedient wird.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-43.md</code>.</p>
+    </footer>
+</body>
+</html>

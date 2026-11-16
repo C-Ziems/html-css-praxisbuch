@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 39, Aufgabe 1: Fortgeschrittene Selektoren</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Fortgeschrittene Selektoren</h1>
+    <p>
+        Jeder Selektor hebt seine Auswahl hervor: a) nur der erste Absatz nach der h2, b) nur der Link mit
+        https://, c) jede zweite Tabellenzeile, d) das Formularfeld mit rotem Rahmen, sobald du das leere
+        Pflichtfeld verlassen hast.
+    </p>
+    <h2>Überschrift</h2>
+    <p>a) Dieser Absatz folgt unmittelbar auf die h2.</p>
+    <p>Dieser Absatz folgt nicht unmittelbar.</p>
+    <p>b) <a href="https://example.com/">Externe Adresse</a> und <a href="index.html">relative Adresse</a></p>
+    <table>
+        <tbody>
+            <tr><td>Zeile 1</td></tr>
+            <tr><td>Zeile 2</td></tr>
+            <tr><td>Zeile 3</td></tr>
+            <tr><td>Zeile 4</td></tr>
+        </tbody>
+    </table>
+    <div class="formularfeld">
+        <label for="artikel">d) Artikel (Pflichtfeld)</label>
+        <input type="text" id="artikel" name="artikel" required>
+    </div>
+</body>
+</html>

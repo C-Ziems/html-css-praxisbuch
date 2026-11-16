@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 47 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 47: Container Queries: Komponenten an ihren Platz anpassen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Produktkarte zeigt bei einer Inhaltsbreite unter 20rem das Bild über dem Text, ab 20rem daneben. Schreibe Container und Abfrage.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;article class="produktkarte"&gt;
+    &lt;div class="produktkarte-inhalt"&gt;
+        &lt;img src="bilder/thermostat.png" alt="…" width="400" height="300"&gt;
+        &lt;div&gt;
+            &lt;h3&gt;Thermostat&lt;/h3&gt;
+            &lt;p&gt;…&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                </figure>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.produktkarte {
+    container: produktkarte / inline-size;
+}
+
+.produktkarte-inhalt {
+    display: grid;
+    gap: 1rem;
+}
+
+@container produktkarte (inline-size &gt;= 20rem) {
+    .produktkarte-inhalt {
+        grid-template-columns: 8rem 1fr;
+        align-items: start;
+    }
+}</code></pre>
+                </figure>
+                <p>Die Karte ist der Container, die Abfrage gestaltet ihren Nachfahren <code>.produktkarte-inhalt</code>.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Karte soll sich in einer Container Query auf ihre eigene Breite beziehen. Erkläre, warum das nicht möglich ist, und wie man das löst.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Eine Container Query gestaltet die Nachfahren eines Containers. Würde ein Element seine eigene Gestaltung von seiner Breite abhängig machen, könnte die geänderte Gestaltung wiederum seine Breite ändern; das ergäbe einen Kreislauf. <code>container-type: inline-size</code> isoliert deshalb die Breite des Containers von seinem Inhalt. Soll sich die Karte selbst ändern, machen wir ein umgebendes Element zum Container oder gestalten, wie in Aufgabe 1, ein inneres Element.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-47.md</code>.</p>
+    </footer>
+</body>
+</html>

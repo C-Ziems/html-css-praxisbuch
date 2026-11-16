@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 8 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 8: Textsemantik II: Zitate, Code und Daten</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Anleitung enthält den Satz „Wir drücken Strg + S, und VS Code zeigt kurz ‚Gespeichert‘ an. Die Regel color: navy; steht in style.css.“ Zeichne den Satz vollständig mit den passenden Elementen aus.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Wir drücken &lt;kbd&gt;&lt;kbd&gt;Strg&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;&lt;/kbd&gt;, und VS Code zeigt kurz
+&lt;samp&gt;Gespeichert&lt;/samp&gt; an. Die Regel &lt;code&gt;color: navy;&lt;/code&gt; steht in
+&lt;code&gt;style.css&lt;/code&gt;.&lt;/p&gt;</code></pre>
+                </figure>
+                <ul>
+                <li><code>kbd</code> kennzeichnet die Eingabe; die äußere Auszeichnung umfasst die ganze Tastenkombination, die inneren die einzelnen Tasten.</li>
+                <li><code>samp</code> kennzeichnet die Ausgabe eines Programms.</li>
+                <li><code>code</code> kennzeichnet die CSS-Deklaration und den Dateinamen.</li>
+                </ul>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Gerätepass nennt die Angabe „Wartung fällig am 3. März 2027 um 10 Uhr“. Zeichne sie so aus, dass das Datum maschinenlesbar ist.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Wartung fällig am &lt;time datetime="2027-03-03T10:00"&gt;3. März 2027 um 10 Uhr&lt;/time&gt;.&lt;/p&gt;</code></pre>
+                </figure>
+                <p>Der sichtbare Text bleibt für Menschen formuliert, <code>datetime</code> enthält Datum und Uhrzeit in maschinenlesbarer Form.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-08.md</code>.</p>
+    </footer>
+</body>
+</html>

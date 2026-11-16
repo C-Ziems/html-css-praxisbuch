@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 25 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 25: CSS Grid: Elemente platzieren und Subgrid nutzen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Seitenlayout besteht aus einem Kopf über die ganze Breite, Navigation links, Inhalt rechts und einem Fuß über die ganze Breite. Beschreibe es mit <code>grid-template-areas</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.seite {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    grid-template-areas:
+        "kopf kopf"
+        "navigation inhalt"
+        "fuss fuss";
+    gap: 1rem;
+}
+
+.seite &gt; header { grid-area: kopf; }
+.seite &gt; nav    { grid-area: navigation; }
+.seite &gt; main   { grid-area: inhalt; }
+.seite &gt; footer { grid-area: fuss; }</code></pre>
+                </figure>
+                <p>Jede Zeichenkette beschreibt eine Rasterzeile. Ein Name, der in mehreren Zellen steht, bildet einen zusammenhängenden Bereich.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Liste von Karten verwendet <code>grid-auto-flow: dense</code>. Erkläre, warum das problematisch sein kann.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>dense</code> füllt Lücken mit späteren Items, die hineinpassen. Dadurch kann eine Karte sichtbar vor einer anderen stehen, obwohl sie im DOM später folgt. Lesereihenfolge und Tastaturreihenfolge richten sich weiter nach dem DOM, der Fokus springt dann scheinbar ungeordnet. Bei Inhalten mit sinnvoller Reihenfolge verzichten wir deshalb auf <code>dense</code>.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-25.md</code>.</p>
+    </footer>
+</body>
+</html>

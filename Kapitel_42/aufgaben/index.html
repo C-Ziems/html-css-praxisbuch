@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 42 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 42: Fortgeschrittene Typografie und Webfonts</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine lokal gespeicherte Schrift „Hausschrift“ liegt in zwei Dateien vor (Regular und Bold, WOFF2). Schreibe die <code>@font-face</code>-Regeln mit <code>font-display: swap</code> und gib eine Schriftfamilienliste mit Ersatzschriften an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>@font-face {
+    font-family: "Hausschrift";
+    src: url("../schriften/hausschrift-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hausschrift";
+    src: url("../schriften/hausschrift-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Hausschrift", Arial, Helvetica, sans-serif;
+}</code></pre>
+                </figure>
+                <p>Jede statische Schriftdatei erhält eine eigene Regel mit demselben Familiennamen. Der Pfad bezieht sich auf die Moduldatei im Ordner <code>css</code>, deshalb beginnt er mit <code>../</code>. Vor dem Einsatz prüfen wir die Nutzungsbedingungen der Schrift.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Webfont wird mit <code>font-display: swap</code> geladen. Erkläre, warum es zu einem kurzen Umspringen der Schrift kommen kann und wie eine passende Ersatzschrift das abmildert.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Mit <code>swap</code> zeigt der Browser den Text sofort in einer Ersatzschrift und tauscht sie aus, sobald die Webfont geladen ist. Unterscheiden sich beide Schriften in Breite oder Höhe, verschieben sich Zeilenumbrüche und nachfolgende Inhalte. Eine Ersatzschrift mit ähnlichen Proportionen hält diese Verschiebung klein. Der Inhalt bleibt in jedem Fall von Anfang an lesbar.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-42.md</code>.</p>
+    </footer>
+</body>
+</html>

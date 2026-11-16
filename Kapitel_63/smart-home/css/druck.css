@@ -1,0 +1,127 @@
+:root {
+    color-scheme: light;
+    --farbe-text: #000;
+    --farbe-text-ergaenzend: #000;
+    --farbe-hintergrund: #fff;
+    --farbe-akzent: #000;
+    --farbe-link-besucht: #000;
+    --farbe-ueberschrift: #000;
+    --farbe-rahmen: #777;
+    --farbe-flaeche-abgesetzt: #fff;
+    --farbe-feld-hintergrund: #fff;
+    --farbe-formularrahmen: #777;
+    --farbe-dringend: #000;
+    --farbe-fehler: #000;
+    --farbe-hinweis-text: #000;
+    --farbe-hinweis-hintergrund: #fff;
+    --farbe-hinweis-rahmen: #777;
+    --schatten-karte: none;
+}
+
+body {
+    font-size: 11pt;
+}
+
+.seitenrahmen {
+    max-inline-size: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hauptnavigation,
+.sprunglink,
+.technische-informationen,
+.artikelerfassung,
+.befehlsleiste,
+.geraetefilter,
+.popover-steuerung,
+audio,
+video {
+    display: none;
+}
+
+.raumliste {
+    display: block;
+}
+
+.raumkarte {
+    margin-block: 0 1rem;
+}
+
+.hausbeschreibung {
+    columns: auto;
+}
+
+.statuskarte > h3 {
+    padding-inline-end: 0;
+}
+
+.statuskarte > .status {
+    position: static;
+    margin-block-end: 0.5rem;
+}
+
+.tabellenbereich {
+    overflow: visible;
+}
+
+.tabellenbereich th,
+.tabellenbereich td {
+    overflow-wrap: anywhere;
+}
+
+.grundrissbereich {
+    overflow: visible;
+}
+
+.grundrissbild {
+    inline-size: auto;
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+article[data-versorgung] {
+    display: block;
+}
+
+[popover] {
+    display: block;
+    position: static;
+    inset: auto;
+    inline-size: auto;
+    max-block-size: none;
+    margin: 0 0 1rem;
+    overflow: visible;
+    opacity: 1;
+}
+
+p {
+    orphans: 3;
+    widows: 3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    break-after: avoid;
+}
+
+.raumkarte,
+article,
+figure {
+    break-inside: avoid;
+}
+
+*,
+*::before,
+*::after {
+    animation: none;
+    transition: none;
+}
+
+@page {
+    margin: 1.5cm;
+}

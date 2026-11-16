@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 63 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 63: Den Projektstand mit Git verwalten</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Nach einer Änderung an <code>css/druck.css</code> soll nur diese Datei aufgezeichnet werden. Gib die Befehle in sinnvoller Reihenfolge an, einschließlich der Prüfung vor und nach dem Commit.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>Befehle</figcaption>
+                <pre><code>git status
+git diff css/druck.css
+git add css/druck.css
+git diff --staged
+git commit -m "Druckregeln für Tabellen verbessern"
+git status
+git log --oneline</code></pre>
+                </figure>
+                <p><code>git status</code> zeigt zuerst, welche Dateien geändert sind. <code>git diff</code> zeigt die Änderung, <code>git diff --staged</code> die vorgemerkte Auswahl. Nach dem Commit bestätigen <code>git status</code> und <code>git log --oneline</code> den Stand. Die Nachricht benennt die tatsächliche Aufgabe.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Datei wird geändert und mit <code>git add</code> vorgemerkt, danach erneut geändert, und anschließend folgt <code>git commit</code>. Erkläre, welcher Stand im Commit landet.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Im Commit landet der Stand zum Zeitpunkt von <code>git add</code>. Die zweite Änderung ist nicht vorgemerkt und bleibt im Arbeitsverzeichnis. <code>git status</code> zeigt die Datei deshalb danach weiterhin als geändert an. Soll auch die zweite Änderung in den Commit, merken wir die Datei vor dem Commit erneut mit <code>git add</code> vor.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-63.md</code>.</p>
+    </footer>
+</body>
+</html>

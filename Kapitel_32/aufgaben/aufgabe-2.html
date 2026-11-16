@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 32, Aufgabe 2: SVG übernimmt die Textfarbe</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>SVG übernimmt die Textfarbe</h1>
+    <p>
+        Dasselbe Wappen steht in zwei Absätzen mit unterschiedlicher Textfarbe. Durch fill="currentColor"
+        übernimmt es jeweils die Farbe seines Absatzes.
+    </p>
+    <p class="blau">
+        <svg viewBox="0 0 24 24" width="48" height="48" role="img" aria-label="Hauswappen">
+            <path d="M12 2 L22 9 V22 H2 V9 Z" fill="currentColor"/>
+        </svg>
+        Wappen in Blau
+    </p>
+    <p class="rot">
+        <svg viewBox="0 0 24 24" width="48" height="48" role="img" aria-label="Hauswappen">
+            <path d="M12 2 L22 9 V22 H2 V9 Z" fill="currentColor"/>
+        </svg>
+        Wappen in Rot
+    </p>
+</body>
+</html>

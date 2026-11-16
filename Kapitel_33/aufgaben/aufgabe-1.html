@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 33, Aufgabe 1: Datentabelle mit Beschriftung</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Datentabelle mit Beschriftung</h1>
+    <p>
+        Untersuche die Tabelle im Accessibility-Bereich der DevTools: Jede Datenzelle ist einer Spalten- und
+        einer Zeilenüberschrift zugeordnet.
+    </p>
+    <table>
+        <caption>Stromverbrauch in kWh</caption>
+        <thead>
+            <tr>
+                <th scope="col">Gerät</th>
+                <th scope="col">Oktober</th>
+                <th scope="col">November</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Kühlschrank</th>
+                <td>28</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <th scope="row">Waschmaschine</th>
+                <td>15</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <th scope="row">Heizkörperthermostat</th>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 21, Aufgabe 2: Stacking Context</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>Stacking Context</h1>
+    <p>
+        Box B liegt über dem Kind von A, obwohl das Kind z-index: 100 besitzt. A und B werden als Ganzes
+        verglichen: 3 gegen 5. Ändere im Inspector den z-index von A auf 6 und beobachte den Wechsel.
+    </p>
+    <div class="buehne">
+        <div class="box a">A (z-index: 3)
+            <div class="kind">Kind von A (z-index: 100)</div>
+        </div>
+        <div class="box b">B (z-index: 5)</div>
+    </div>
+</body>
+</html>

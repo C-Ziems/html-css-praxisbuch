@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 56 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 56: Templates, Shadow DOM und die Einbindung von Scripts</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Die Scriptdatei <code>js/start.js</code> soll das Einlesen des Dokuments nicht aufhalten und erst danach ausgeführt werden. Binde sie ein und schreibe einen passenden Hinweis für deaktiviertes Scripting.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;script src="js/start.js" defer&gt;&lt;/script&gt;
+&lt;noscript&gt;
+    &lt;p&gt;Einige Zusatzfunktionen benötigen JavaScript. Alle Inhalte sind auch ohne sie verfügbar.&lt;/p&gt;
+&lt;/noscript&gt;</code></pre>
+                </figure>
+                <p><code>defer</code> lädt die Datei parallel zum Einlesen und führt sie danach aus, mehrere <code>defer</code>-Scripts in ihrer Reihenfolge. <code>async</code> würde die Ausführung starten, sobald die Datei geladen ist, ohne feste Reihenfolge. Der <code>noscript</code>-Hinweis erscheint nur bei deaktiviertem Scripting, nicht bei einem fehlgeschlagenen Script.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Komponente verwendet ein <code>slot</code>-Element. Erkläre, wann dessen eigener Inhalt angezeigt wird und wann ein Inhalt des Hosts.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Ein <code>slot</code> zeigt Inhalte des Hosts an, die ihm zugeordnet sind, bei benannten Slots über das Attribut <code>slot</code>. Ist kein passender Inhalt vorhanden, erscheint der eigene Inhalt des <code>slot</code>-Elements als Ersatz.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-56.md</code>.</p>
+    </footer>
+</body>
+</html>

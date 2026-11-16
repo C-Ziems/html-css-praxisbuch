@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 56, Aufgabe 2: Slots mit Ersatzinhalt</title>
+    <link rel="stylesheet" href="aufgabe-2.css">
+</head>
+<body>
+    <h1>Slots mit Ersatzinhalt</h1>
+    <p>
+        Beide Karten verwenden dasselbe Schattenbaum-Gerüst. Die erste liefert Titel und Text, die zweite
+        nichts; dort erscheint der eigene Inhalt der Slots als Ersatz.
+    </p>
+    <div class="karte">
+        <template shadowrootmode="open">
+            <h2><slot name="titel">Ohne Titel</slot></h2>
+            <slot>Keine Beschreibung vorhanden.</slot>
+        </template>
+        <span slot="titel">Thermostat</span>
+        Regelt die Raumtemperatur.
+    </div>
+    <div class="karte">
+        <template shadowrootmode="open">
+            <h2><slot name="titel">Ohne Titel</slot></h2>
+            <slot>Keine Beschreibung vorhanden.</slot>
+        </template>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span:lang(en) {
+    border-block-end: 3px solid darkgreen;
+}
+
+span[lang="en"] {
+    border-block-start: 3px solid darkred;
+}

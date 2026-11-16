@@ -1,0 +1,22 @@
+/* Gemeinsame Grundgestaltung für alle Seiten */
+body {
+    color: dimgray;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: midnightblue;
+}
+
+nav {
+    background-color: gainsboro;
+}
+
+a {
+    color: darkblue;
+}

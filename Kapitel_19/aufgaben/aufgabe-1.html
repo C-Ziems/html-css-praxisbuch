@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 19, Aufgabe 1: Ausblenden, Platz halten, scrollen, nebeneinander</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Ausblenden, Platz halten, scrollen, nebeneinander</h1>
+    <p>
+        Vergleiche a) und b): Das erste Element fehlt vollständig, das zweite hinterlässt eine Lücke. Der
+        Textbereich in c) lässt sich scrollen, die Links in d) stehen mit Innenabstand in einer Zeile.
+    </p>
+    <h2>a) display: none</h2>
+    <p>Vorher</p>
+    <p class="weg">Dieser Absatz ist nicht zu sehen.</p>
+    <p>Nachher</p>
+    <h2>b) visibility: hidden</h2>
+    <p>Vorher</p>
+    <p class="unsichtbar">Dieser Absatz ist unsichtbar, behält aber seinen Platz.</p>
+    <p>Nachher</p>
+    <h2>c) Höhe begrenzen und scrollen</h2>
+    <div class="scrollbereich">
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    <p>Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe. Dieser Absatz füllt die Seite, damit sich die Wirkung beim Scrollen beobachten lässt. Er hat keine eigene Bedeutung für die Aufgabe.</p>
+    </div>
+    <h2>d) inline-block</h2>
+    <p><a href="#">Wohnzimmer</a> <a href="#">Küche</a> <a href="#">Bad</a></p>
+</body>
+</html>

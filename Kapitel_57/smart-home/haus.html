@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Home | Das Haus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="seitenrahmen">
+        <header>
+            <h1>Das Haus</h1>
+        </header>
+        <nav class="hauptnavigation">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="haus.html" aria-current="page">Das Haus</a></li>
+                <li><a href="geraete.html">Geräte</a></li>
+                <li><a href="einkaufsliste.html">Einkaufsliste</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p>Unser virtuelles Smart Home besteht aus mehreren Bereichen, die wir im Verlauf des Projekts weiter ausbauen.</p>
+            <section>
+                <h2 id="erdgeschoss">Erdgeschoss</h2>
+                <ul>
+                    <li>Wohnzimmer</li>
+                    <li>Küche</li>
+                </ul>
+            </section>
+            <section>
+                <h2 id="obergeschoss">Obergeschoss</h2>
+                <ul>
+                    <li>Schlafzimmer</li>
+                    <li>Arbeitszimmer</li>
+                    <li>Bad</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Räume im Überblick</h2>
+                <p>Die folgenden Zustände und Messwerte sind Demonstrationsdaten.</p>
+                <div class="raumliste">
+                    <section class="raumkarte statuskarte" id="wohnzimmer">
+                        <h3>Wohnzimmer</h3>
+                        <span class="status">Online</span>
+                        <span class="raumkennzeichen" aria-hidden="true">W</span>
+                        <p>Temperatur: 21&nbsp;°C. Im Wohnzimmer betrachten wir Beleuchtung, Raumklima und Unterhaltungselektronik. Die Raumübersicht führt die zugehörigen Zustände und Messwerte zusammen. So erkennen wir, welche Informationen zu diesem Raum gehören.</p>
+                    </section>
+                    <section class="raumkarte" id="kueche">
+                        <h3>Küche</h3>
+                        <p>Temperatur: 20&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte" id="schlafzimmer">
+                        <h3>Schlafzimmer</h3>
+                        <p>Temperatur: 19&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte" id="arbeitszimmer">
+                        <h3>Arbeitszimmer</h3>
+                        <p>Temperatur: 20&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte" id="bad">
+                        <h3>Bad</h3>
+                        <p>Temperatur: 22&nbsp;°C</p>
+                    </section>
+                </div>
+            </section>
+            <section>
+                <h2>Das vernetzte Haus</h2>
+                <div class="hausbeschreibung">
+                    <p>In einem vernetzten Haus ergänzen sich Informationen aus unterschiedlichen Bereichen. Ein Temperaturwert beschreibt das Raumklima, ein Fensterkontakt meldet einen Öffnungszustand, und eine Verbrauchsmessung zeigt den Energiebedarf eines Geräts. Erst durch ihre Zuordnung erhalten diese Angaben einen verständlichen Zusammenhang.</p>
+                    <p>Ein geöffnetes Fenster kann beispielsweise erklären, warum die Temperatur in einem Raum sinkt. Ein erhöhter Stromverbrauch kann mit einem gerade verwendeten Gerät zusammenhängen. Einzelne Werte liefern deshalb Anhaltspunkte, müssen aber im Zusammenhang mit der jeweiligen Situation betrachtet werden.</p>
+                    <p>Unsere Website bietet dafür unterschiedliche Zugänge. Die Startseite fasst ausgewählte Angaben zusammen. Die Hausseite ordnet Informationen den Räumen zu. Im Gerätepass halten wir Eigenschaften einzelner Geräte fest, während die Einkaufsliste geplante Komponenten sammelt.</p>
+                    <p>Eine übersichtliche Darstellung soll diese Zusammenhänge verständlich machen. Bezeichnungen, Einheiten und Hinweise gehören deshalb unmittelbar zu den jeweiligen Angaben. In unserem Projekt verwenden wir weiterhin statische Demonstrationsdaten; eine Verbindung zu realen Sensoren besteht bisher nicht.</p>
+                </div>
+            </section>
+            <figure class="hausabbildung">
+                <img
+                    src="bilder/haus-aussenansicht-1200.jpg"
+                    srcset="
+                        bilder/haus-aussenansicht-480.jpg 480w,
+                        bilder/haus-aussenansicht-800.jpg 800w,
+                        bilder/haus-aussenansicht-1200.jpg 1200w
+                    "
+                    sizes="auto, (max-width: 70rem) calc(100vw - 2rem), 68rem"
+                    alt="Außenansicht des virtuellen Smart Homes"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                >
+                <figcaption>
+                    In diesem Beispielhaus gibt es viel zu entdecken.
+                </figcaption>
+            </figure>
+            <section>
+                <h2>Grundriss und Raumzugänge</h2>
+                <figure class="hausabbildung">
+                    <div
+                        class="grundrissbereich"
+                        role="region"
+                        aria-label="Grundriss mit Raumlinks"
+                        tabindex="0"
+                    >
+                        <img
+                            class="grundrissbild"
+                            src="bilder/grundriss.png"
+                            alt="Schematische Darstellung der beiden Etagen"
+                            width="800"
+                            height="500"
+                            loading="lazy"
+                            usemap="#raumplan"
+                        >
+                        <map name="raumplan">
+                            <area shape="rect" coords="10,270,355,490" href="#wohnzimmer" alt="Wohnzimmer">
+                            <area shape="rect" coords="450,270,790,490" href="#kueche" alt="Küche">
+                            <area shape="rect" coords="10,10,245,255" href="#schlafzimmer" alt="Schlafzimmer">
+                            <area shape="rect" coords="270,10,530,200" href="#arbeitszimmer" alt="Arbeitszimmer">
+                            <area shape="rect" coords="555,10,790,255" href="#bad" alt="Bad">
+                        </map>
+                    </div>
+                    <figcaption>
+                        Vereinfachte Raumübersicht unseres virtuellen Hauses.
+                        Die Räume sind anklickbar.
+                    </figcaption>
+                </figure>
+                <p>
+                    Im Erdgeschoss liegen Wohnzimmer und Küche.
+                    Im Obergeschoss befinden sich Schlafzimmer,
+                    Arbeitszimmer und Bad.
+                </p>
+                <p>Über die Links erreichen wir die Raumkarten:</p>
+                <ul>
+                    <li><a href="#wohnzimmer">Wohnzimmer</a></li>
+                    <li><a href="#kueche">Küche</a></li>
+                    <li><a href="#schlafzimmer">Schlafzimmer</a></li>
+                    <li><a href="#arbeitszimmer">Arbeitszimmer</a></li>
+                    <li><a href="#bad">Bad</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Medien aus dem Smart Home</h2>
+                <h3>Hausdurchsage: Türklingel</h3>
+                <audio controls preload="metadata">
+                    <source
+                        src="medien/hausdurchsage.mp3"
+                        type="audio/mpeg">
+                </audio>
+                <p>
+                    Textfassung: Ein Klingelton, danach die Ansage: Es hat
+                    an der Haustür geklingelt.
+                </p>
+                <p>
+                    <a href="medien/hausdurchsage.mp3">
+                        Audiodatei direkt öffnen
+                    </a>
+                </p>
+                <h3>Virtueller Hausrundgang</h3>
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    width="1280"
+                    height="720"
+                    poster="bilder/hausrundgang-vorschau.png">
+                    <source
+                        src="medien/hausrundgang.mp4"
+                        type="video/mp4">
+                    <track
+                        src="medien/hausrundgang-de.vtt"
+                        kind="captions"
+                        srclang="de"
+                        label="Deutsch"
+                        default>
+                </video>
+                <p>
+                    <a href="medien/hausrundgang.mp4">
+                        Videodatei direkt öffnen
+                    </a>
+                </p>
+                <h4>Textfassung des Rundgangs</h4>
+                <p>
+                    Über den Flur erreichen wir alle Räume.
+                    In der Küche können einfache Gerichte zubereitet werden.
+                    Das Schlafzimmer ist für zwei Personen ausgelegt.
+                    Im Wohnzimmer gibt es eine kleine Couch.
+                    Das Bad hat eine Dusche und ein WC.
+                </p>
+            </section>
+            <section>
+                <h2>Raumdaten im Vergleich</h2>
+                <p>
+                    Wir vergleichen hier Beispieldaten für unsere Räume.
+                </p>
+                <div
+                    class="tabellenbereich"
+                    role="region"
+                    aria-labelledby="raumdaten-titel"
+                    tabindex="0">
+                    <table>
+                        <caption id="raumdaten-titel">
+                            Temperatur und Luftfeuchtigkeit nach Raum
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Raum</th>
+                                <th scope="col">Temperatur</th>
+                                <th scope="col">Luftfeuchtigkeit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Wohnzimmer</th>
+                                <td>21&nbsp;°C</td>
+                                <td>45&nbsp;%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Küche</th>
+                                <td>20&nbsp;°C</td>
+                                <td>48&nbsp;%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Schlafzimmer</th>
+                                <td>19&nbsp;°C</td>
+                                <td>50&nbsp;%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Arbeitszimmer</th>
+                                <td>20&nbsp;°C</td>
+                                <td>44&nbsp;%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Bad</th>
+                                <td>22&nbsp;°C</td>
+                                <td>58&nbsp;%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <h2>Energiestatus</h2>
+                <p>
+                    <label for="speicherstand">Ladezustand des Hausspeichers:</label>
+                    <meter id="speicherstand" min="0" max="100" value="72">
+                        72&nbsp;%
+                    </meter>
+                    <span>72&nbsp;%</span>
+                </p>
+            </section>
+            <section class="technische-informationen">
+                <h2>Technische Informationen</h2>
+                <details>
+                    <summary>Wie werden die Raumdaten dargestellt?</summary>
+                    <p>
+                        Die Raumübersicht zeigt Beispieldaten.
+                        Ihre Karten passen sich an den verfügbaren Raum an.
+                        Eine Verbindung zu Sensoren besteht nicht.
+                    </p>
+                </details>
+                <details>
+                    <summary>Welche Medien gehören zum Hausprofil?</summary>
+                    <p>
+                        Zum Hausprofil gehören eine Außenansicht in mehreren
+                        Auflösungen, ein Grundriss, eine Audiospur und ein
+                        Rundgang mit Textspur und ergänzenden Textfassungen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Was bedeutet responsive Gestaltung?</summary>
+                    <p>Der englische Ausdruck <span lang="en">responsive
+                    design</span>
+                    bezeichnet eine Gestaltung, die sich an unterschiedliche
+                    Darstellungsbedingungen anpasst.
+                    Unsere Website berücksichtigt dafür unter anderem den
+                    verfügbaren Platz und die Textgröße.</p>
+                </details>
+                <button
+                    class="popover-steuerung"
+                    type="button"
+                    popovertarget="systeminfo"
+                    popovertargetaction="show"
+                >
+                    Systeminfo anzeigen
+                </button>
+                <div id="systeminfo" popover>
+                    <h3>Systeminfo</h3>
+                    <p>
+                        Diese Website demonstriert eine Smart-Home-Oberfläche
+                        mit HTML und CSS.
+                        Die Angaben werden nicht automatisch aktualisiert.
+                    </p>
+                    <button
+                        class="popover-steuerung"
+                        type="button"
+                        popovertarget="systeminfo"
+                        popovertargetaction="hide"
+                    >
+                        Schließen
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer class="seitenfuss">
+            <p>Projektstand: <time datetime="2026-09-27">27. September 2026</time></p>
+        </footer>
+    </div>
+</body>
+
+</html>

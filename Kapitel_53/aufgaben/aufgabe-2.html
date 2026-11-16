@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 53, Aufgabe 2: Hilfe als Popover</title>
+</head>
+<body>
+    <h1>Hilfe als Popover</h1>
+    <p>
+        Öffne die Hilfe. Die übrige Seite bleibt bedienbar; Escape oder ein Klick außerhalb schließt das
+        Popover.
+    </p>
+    <button type="button" popovertarget="hilfe">Hilfe</button>
+    <div id="hilfe" popover>
+        <p>Mit den Pfeiltasten wählen Sie einen Raum aus.</p>
+    </div>
+    <p><a href="index.html">Dieser Link bleibt bedienbar, während die Hilfe geöffnet ist.</a></p>
+</body>
+</html>

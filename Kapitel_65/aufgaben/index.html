@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 65 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 65: Das Smart Home weiterentwickeln</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Das Smart Home soll um die Funktion „Raumtemperaturen von Hand eintragen und auf allen Geräten sehen“ erweitert werden. Plane die Erweiterung stichpunktartig in den sechs Schritten aus Abschnitt 65.2.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ol>
+                <li>Aufgabe: Bewohner tragen Temperaturen ein und sehen sie auf allen Geräten.</li>
+                <li>Datenflüsse: Eingaben gehen an einen Server und werden in einer Datenbank gespeichert; wer darf lesen und schreiben, wie lange werden Daten aufbewahrt, welche Informationen brauchen Betroffene (Kapitel 61)?</li>
+                <li>HTML-Grundlage: ein Formular mit Raum (<code>select</code>) und Temperatur (<code>input type="number"</code> mit Grenzen) sowie eine Tabelle der gespeicherten Werte.</li>
+                <li>Darstellung: vorhandene Formular- und Tabellenregeln nutzen, neue Regeln in <code>komponenten</code>.</li>
+                <li>Verhalten: Serveranwendung prüft und speichert die Werte, eine Anmeldung schützt den Zugriff; optional aktualisiert JavaScript die Tabelle ohne Neuladen.</li>
+                <li>Prüfen: Tastatur, Screenreader, Fehlermeldungen, schmale Ansicht, Druck, Validierung, Verhalten bei Serverfehlern.</li>
+                </ol>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Branch <code>farbschema-schalter</code> soll angelegt werden. Zwischendurch wird auf <code>main</code> ein Fehler behoben, später wird der Branch zusammengeführt. Gib die Git-Befehle an und erkläre, was zu tun ist, wenn Git den Wechsel auf <code>main</code> verweigert.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>Befehle</figcaption>
+                <pre><code>git switch -c farbschema-schalter
+# … ändern, prüfen, committen …
+git status
+git switch main
+# … Fehler beheben, prüfen, committen …
+git switch farbschema-schalter
+# … weiterarbeiten …
+git switch main
+git merge farbschema-schalter</code></pre>
+                </figure>
+                <p>Verweigert Git den Wechsel, würden nicht committete Änderungen überschrieben. Wir committen sie zuerst, wenn sie fertig sind, oder machen sie rückgängig, wenn sie verworfen werden sollen. Danach zeigt <code>git status</code> einen sauberen Arbeitsstand, und der Wechsel gelingt.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-65.md</code>.</p>
+    </footer>
+</body>
+</html>

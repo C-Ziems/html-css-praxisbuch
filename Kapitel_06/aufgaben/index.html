@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 6 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 6: Überschriften, Absätze und Dokumentgliederung</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Vereinsseite soll folgenden Inhalt darstellen: Vereinsname, Termine (Sommerfest, Jahresversammlung), Ansprechpersonen, Anfahrt (mit dem Bus, mit dem Auto). Erstelle eine passende Gliederung mit <code>h1</code> bis <code>h3</code> und begründe die Gliederung.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Eine mögliche Gliederung:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;h1&gt;Sportverein Musterstadt&lt;/h1&gt;
+&lt;h2&gt;Termine&lt;/h2&gt;
+&lt;h3&gt;Sommerfest&lt;/h3&gt;
+&lt;h3&gt;Jahresversammlung&lt;/h3&gt;
+&lt;h2&gt;Ansprechpersonen&lt;/h2&gt;
+&lt;h2&gt;Anfahrt&lt;/h2&gt;
+&lt;h3&gt;Mit dem Bus&lt;/h3&gt;
+&lt;h3&gt;Mit dem Auto&lt;/h3&gt;</code></pre>
+                </figure>
+                <ul>
+                <li>Der Vereinsname benennt die ganze Seite und ist deshalb die einzige <code>h1</code>.</li>
+                <li>Termine, Ansprechpersonen und Anfahrt sind gleichrangige Hauptbereiche (<code>h2</code>).</li>
+                <li>Sommerfest und Jahresversammlung sind Unterthemen der Termine, Bus und Auto Unterthemen der Anfahrt (<code>h3</code>).</li>
+                </ul>
+                <p>Andere Bezeichnungen sind möglich. Entscheidend ist, dass die Ebenen der inhaltlichen Gliederung folgen und keine Ebene übersprungen wird.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Der folgende Ausschnitt enthält zwei Fehler. Finde sie und schreibe eine korrigierte Fassung:</p>
+            <figure class="code">
+            <figcaption>HTML</figcaption>
+            <pre><code>&lt;h1&gt;Energie&lt;/h1&gt;
+&lt;h4&gt;Verbrauch heute&lt;/h4&gt;
+&lt;p&gt;
+    &lt;h3&gt;Hinweis&lt;/h3&gt;
+    Der Verbrauch liegt unter dem Vortag.
+&lt;/p&gt;</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Die beiden Fehler sind unterschiedlicher Art:</p>
+                <ol>
+                <li>Gliederungsfehler: Nach der <code>h1</code> folgt eine <code>h4</code>; die Ebenen <code>h2</code> und <code>h3</code> werden übersprungen. Das ist gültiges HTML, die Gliederung stimmt aber nicht mit dem Inhalt überein. „Verbrauch heute“ ist ein Unterthema von „Energie“ und erhält deshalb <code>h2</code>.</li>
+                <li>Ungültiges HTML: Ein Absatz <code>p</code> darf keine Überschrift enthalten. Der Browser beendet den Absatz beim <code>&lt;h3&gt;</code> automatisch, sodass ein leerer Absatz entsteht und der Text nicht mehr im Absatz steht.</li>
+                </ol>
+                <p>Korrigierte Fassung:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;h1&gt;Energie&lt;/h1&gt;
+&lt;h2&gt;Verbrauch heute&lt;/h2&gt;
+&lt;h3&gt;Hinweis&lt;/h3&gt;
+&lt;p&gt;Der Verbrauch liegt unter dem Vortag.&lt;/p&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-06.md</code>.</p>
+    </footer>
+</body>
+</html>

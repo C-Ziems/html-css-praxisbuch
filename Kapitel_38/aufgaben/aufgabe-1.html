@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 38, Aufgabe 1: Feld mit Muster und Hinweis</title>
+    <link rel="stylesheet" href="aufgabe-1.css">
+</head>
+<body>
+    <h1>Feld mit Muster und Hinweis</h1>
+    <p>
+        Gib „ht 2026“ oder „HT2026“ ein und schicke ab: Der Browser meldet, dass das Format nicht passt. „HT
+        2026“ wird angenommen. Ein Screenreader liest den Hinweis zusammen mit dem Feld vor.
+    </p>
+    <form action="aufgabe-1.html">
+        <div class="formularfeld">
+            <label for="kennung">Gerätekennung</label>
+            <input type="text" id="kennung" name="kennung" required
+                   pattern="[A-Z]{2} [0-9]{4}" aria-describedby="kennung-hinweis">
+            <p id="kennung-hinweis" class="feldhinweis">
+                Zwei Großbuchstaben, ein Leerzeichen und vier Ziffern, zum Beispiel HT 2026.
+            </p>
+        </div>
+        <button type="submit">Prüfen</button>
+    </form>
+</body>
+</html>

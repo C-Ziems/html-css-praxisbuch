@@ -1,0 +1,18 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.artikeltext {
+    display: flow-root;
+    max-width: 30rem;
+    margin-bottom: 1rem;
+    border: 1px solid #999;
+}
+
+.initiale {
+    float: inline-start;
+    font-size: 3em;
+    line-height: 1;
+    margin-inline-end: 0.25rem;
+}

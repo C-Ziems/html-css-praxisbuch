@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 48 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 48: Nutzerpräferenzen und robuste Darstellung</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Die Tokens <code>--farbe-hinweis-hintergrund: #fff8db</code> und <code>--farbe-hinweis-text: #5c4400</code> gelten für das helle Schema. Lege passende Werte für das dunkle Schema fest, einmal mit einer Media Query und einmal mit <code>light-dark()</code>.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Mit einer Media Query:</p>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>:root {
+    --farbe-hinweis-hintergrund: #fff8db;
+    --farbe-hinweis-text: #5c4400;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --farbe-hinweis-hintergrund: #3a3000;
+        --farbe-hinweis-text: #ffe9a6;
+    }
+}</code></pre>
+                </figure>
+                <p>Mit <code>light-dark()</code>:</p>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>:root {
+    color-scheme: light dark;
+    --farbe-hinweis-hintergrund: light-dark(#fff8db, #3a3000);
+    --farbe-hinweis-text: light-dark(#5c4400, #ffe9a6);
+}</code></pre>
+                </figure>
+                <p><code>light-dark()</code> setzt voraus, dass <code>color-scheme</code> beide Schemata erlaubt. Die dunklen Werte sind Beispiele; andere sind ebenso richtig, wenn der Kontrast in beiden Schemata ausreicht. Wir messen ihn mit den DevTools.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein System verwendet <code>forced-colors: active</code>. Erkläre, warum wir dann keine eigenen Farben erzwingen und welche Gestaltung trotzdem erhalten bleiben sollte.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Erzwungene Farben ersetzen unsere Farben durch eine Palette, die Nutzer für ihre Lesbarkeit gewählt haben. Würden wir eigene Farben erzwingen, nähmen wir ihnen diese Anpassung. Erhalten bleiben sollten Grenzen und Zustände, die nicht nur über Hintergrund oder Schatten vermittelt werden: Rahmen um Karten und Felder, sichtbare Fokuskonturen und Texte, die einen Zustand benennen.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-48.md</code>.</p>
+    </footer>
+</body>
+</html>

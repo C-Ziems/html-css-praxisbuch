@@ -1,0 +1,431 @@
+.seitenrahmen {
+    max-inline-size: 70rem;
+    margin-inline: auto;
+    padding: var(--abstand-mittel);
+}
+
+.hauptnavigation {
+    background-color: var(--farbe-flaeche-abgesetzt);
+    padding-block: var(--abstand-klein);
+    padding-inline: var(--abstand-mittel);
+    & > ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--abstand-klein) var(--abstand-mittel);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    & a {
+        color: var(--farbe-akzent);
+    }
+}
+
+.pruefen,
+.hinweis {
+    color: var(--farbe-hinweis-text);
+    background-color: var(--farbe-hinweis-hintergrund);
+}
+
+.hinweis {
+    padding: var(--abstand-mittel);
+    border: 1px solid var(--farbe-hinweis-rahmen);
+    border-inline-start-width: 0.4rem;
+    margin-block: 1.5rem;
+    border-radius: var(--radius-standard);
+}
+
+.dringend {
+    color: var(--farbe-dringend);
+}
+
+.pruefen.dringend {
+    font-weight: bold;
+}
+
+[aria-current="page"] {
+    font-weight: bold;
+}
+
+.seitenfuss {
+    margin-block-start: var(--abstand-gross);
+    color: var(--farbe-text-ergaenzend);
+    font-size: 0.9rem;
+}
+
+.raumkarte {
+    padding: var(--abstand-mittel);
+    border: 1px solid var(--farbe-rahmen);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--schatten-karte);
+}
+
+.statuskarte {
+    container: statuskarte / inline-size;
+    position: relative;
+    display: flow-root;
+}
+
+.status {
+    display: block;
+    margin-block-end: var(--abstand-klein);
+}
+
+.statuskarte > h3 {
+    margin-block: 0 var(--abstand-klein);
+}
+
+.status::before {
+    content: "";
+    display: inline-block;
+    inline-size: 0.6rem;
+    block-size: 0.6rem;
+    margin-inline-end: 0.4rem;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+@container statuskarte (inline-size >= 24rem) {
+    .statuskarte > h3 {
+        padding-inline-end: 5rem;
+    }
+    .statuskarte > .status {
+        position: absolute;
+        inset-block-start: var(--abstand-mittel);
+        inset-inline-end: var(--abstand-mittel);
+        margin-block-end: 0;
+    }
+}
+
+.raumkennzeichen {
+    float: inline-start;
+    margin-inline-end: var(--abstand-mittel);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--farbe-akzent);
+}
+
+.statusleiste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--abstand-klein);
+}
+
+.statusleiste > div {
+    flex: 1 1 10rem;
+    padding-block: var(--abstand-klein);
+    padding-inline: 0.75rem;
+    border: 1px solid var(--farbe-rahmen);
+    border-radius: var(--radius-standard);
+}
+
+.statusleiste dd {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--farbe-akzent);
+}
+
+.raumliste {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    gap: var(--abstand-mittel);
+}
+
+.steckbrief {
+    display: grid;
+    grid-template-columns: fit-content(40%) minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+}
+
+.steckbrief dt {
+    grid-column: 1 / 2;
+}
+
+.steckbrief dd {
+    grid-column: 2 / 3;
+    margin: 0;
+}
+
+.hausbeschreibung {
+    column-width: 20rem;
+    column-gap: var(--abstand-gross);
+}
+
+.hausabbildung {
+    margin-inline: 0;
+}
+
+.hausabbildung figcaption {
+    margin-block-start: 0.5rem;
+    color: var(--farbe-text-ergaenzend);
+    font-size: 0.9rem;
+}
+
+.grundrissbereich {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.grundrissbereich:focus-visible {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+.grundrissbild {
+    inline-size: 800px;
+    max-inline-size: none;
+    block-size: auto;
+}
+
+.tabellenbereich {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.tabellenbereich table {
+    inline-size: 100%;
+    border-collapse: collapse;
+}
+
+.tabellenbereich caption {
+    margin-block-end: 0.5rem;
+    font-weight: bold;
+    text-align: start;
+}
+
+.tabellenbereich th,
+.tabellenbereich td {
+    padding: 0.5rem;
+    border: 1px solid var(--farbe-rahmen);
+    text-align: start;
+}
+
+.tabellenbereich thead {
+    background-color: var(--farbe-flaeche-abgesetzt);
+}
+
+.tabellenbereich:focus-visible {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+.artikelformular {
+    display: grid;
+    gap: var(--abstand-mittel);
+    max-inline-size: 40rem;
+}
+
+.artikelformular fieldset {
+    display: grid;
+    gap: var(--abstand-mittel);
+    min-inline-size: 0;
+    margin: 0;
+    padding: var(--abstand-mittel);
+    border: 1px solid var(--farbe-rahmen);
+}
+
+.formularfeld {
+    display: grid;
+    gap: 0.25rem;
+    min-inline-size: 0;
+}
+
+.formularfeld input,
+.formularfeld select,
+.formularfeld textarea {
+    inline-size: 100%;
+    min-inline-size: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--farbe-formularrahmen);
+    color: var(--farbe-text);
+    background-color: var(--farbe-feld-hintergrund);
+    font: inherit;
+}
+
+.formularfeld textarea {
+    resize: vertical;
+}
+
+.artikelformular button {
+    justify-self: start;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--farbe-formularrahmen);
+    border-radius: var(--radius-standard);
+    font: inherit;
+    color: var(--farbe-text);
+    background-color: var(--farbe-flaeche-abgesetzt);
+}
+
+.artikelformular button:focus-visible,
+.artikelformular button:active {
+    color: var(--farbe-hintergrund);
+    background-color: var(--farbe-akzent);
+}
+
+@media (hover: hover) {
+    .artikelformular button:hover {
+        color: var(--farbe-hintergrund);
+        background-color: var(--farbe-akzent);
+    }
+}
+
+.artikelformular :is(input, select, textarea, button):focus-visible {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+.feldhinweis {
+    margin: 0;
+    color: var(--farbe-text-ergaenzend);
+    font-size: 0.9rem;
+}
+
+.formularfeld :is(input, select, textarea):user-invalid {
+    border: 2px solid var(--farbe-fehler);
+}
+
+@media (width >= 48rem) {
+    .artikelformular fieldset {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .artikelformular fieldset > p,
+    .artikelformular fieldset > .formularfeld:has(textarea) {
+        grid-column: 1 / -1;
+    }
+}
+
+.raumkarte:target {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+@media (prefers-contrast: more) {
+    .raumkarte,
+    .statusleiste > div {
+        border-width: 2px;
+    }
+}
+
+@keyframes raumkennzeichen-erscheint {
+    0% {
+        opacity: 0.6;
+        transform: translateY(0.25rem);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-0.05rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .artikelformular button {
+        transition: transform 100ms ease;
+    }
+    .artikelformular button:active {
+        transform: translateY(0.08rem);
+    }
+    .raumkennzeichen {
+        animation: raumkennzeichen-erscheint 300ms ease-out;
+    }
+}
+
+.steckbrief code {
+    user-select: all;
+}
+
+.technische-informationen details {
+    margin-block: var(--abstand-mittel);
+}
+
+.technische-informationen details:open > summary {
+    margin-block-end: var(--abstand-klein);
+}
+
+.technische-informationen summary:focus-visible,
+.popover-steuerung:focus-visible {
+    outline: 3px solid var(--farbe-akzent);
+    outline-offset: 2px;
+}
+
+.popover-steuerung {
+    display: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--farbe-formularrahmen);
+    border-radius: var(--radius-standard);
+    font: inherit;
+    color: var(--farbe-text);
+    background-color: var(--farbe-flaeche-abgesetzt);
+}
+
+[popover] {
+    inline-size: min(30rem, calc(100% - 2rem));
+    max-block-size: calc(100vh - 2rem);
+    overflow: auto;
+    padding: var(--abstand-mittel);
+    border: 1px solid var(--farbe-rahmen);
+    border-radius: var(--radius-standard);
+    color: var(--farbe-text);
+    background-color: var(--farbe-hintergrund);
+    box-shadow: var(--schatten-karte);
+}
+
+[popover] > :first-child {
+    margin-block-start: 0;
+}
+
+.befehlsleiste {
+    display: none;
+    flex-wrap: wrap;
+    gap: var(--abstand-klein);
+    margin-block: var(--abstand-mittel);
+    padding: 0;
+    list-style: none;
+}
+
+@supports selector(:popover-open) {
+    .popover-steuerung {
+        display: inline-block;
+    }
+    .befehlsleiste {
+        display: flex;
+    }
+}
+
+@supports selector(:popover-open) {
+    @media (prefers-reduced-motion: no-preference) {
+        [popover] {
+            opacity: 0;
+            transition:
+                opacity 200ms ease,
+                display 200ms allow-discrete,
+                overlay 200ms allow-discrete;
+        }
+        [popover]:popover-open {
+            opacity: 1;
+            @starting-style {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .technische-informationen {
+        interpolate-size: allow-keywords;
+    }
+    .technische-informationen details::details-content {
+        block-size: 0;
+        overflow-y: clip;
+        transition:
+            block-size 200ms ease,
+            content-visibility 200ms allow-discrete;
+    }
+    .technische-informationen details[open]::details-content {
+        block-size: auto;
+    }
+}

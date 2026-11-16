@@ -1,0 +1,13 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media print {
+    table {
+        break-inside: avoid;
+    }
+    h2 {
+        break-before: page;
+    }
+}

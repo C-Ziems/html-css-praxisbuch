@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 64 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 64: Weitere Techniken der Webentwicklung einordnen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein CSS-Framework liegt als <code>css/framework.css</code> vor. Schreibe die Sammeldatei <code>style.css</code> so, dass unsere drei Module für normale Deklarationen Vorrang haben, und erkläre, wann das Framework trotzdem gewinnt.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>@layer framework, basis, komponenten, druck;
+@import url("css/framework.css") layer(framework);
+@import url("css/basis.css") layer(basis);
+@import url("css/komponenten.css") layer(komponenten);
+@import url("css/druck.css") layer(druck) print;</code></pre>
+                </figure>
+                <p>Die Ebene <code>framework</code> steht zuerst und hat deshalb bei normalen Deklarationen den geringsten Vorrang, unabhängig von der Spezifität ihrer Selektoren. Bei <code>!important</code> kehrt sich die Reihenfolge der Ebenen um: Eine wichtige Deklaration im Framework setzt sich dann gegen unsere Ebenen durch.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Bibliothek stellt ein Bildkarussell bereit. Beantworte für sie die Prüffragen aus Abschnitt 64.7: Beschreibe dein Vorgehen und nenne die wichtigsten Fundstellen.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <ul>
+                <li>Aufgabe: Brauchen wir ein Karussell überhaupt? Oft genügen eine Bildleiste mit Scroll Snap (Kapitel 51) oder untereinander stehende Bilder.</li>
+                <li>Lizenz: Lizenzdatei und Bedingungen in der Dokumentation oder im Repository des Projekts.</li>
+                <li>Pflege: Datum der letzten Version, Änderungsprotokoll, offene Sicherheitsmeldungen.</li>
+                <li>Größe: Umfang der Dateien und welcher Teil davon benötigt wird.</li>
+                <li>Herkunft: Selbst bereitstellen statt von einem fremden Server laden; sonst entsteht ein zusätzlicher Datenfluss (Kapitel 61).</li>
+                <li>Zugänglichkeit: Tastaturbedienung, Fokus, Beschriftung der Schaltflächen, keine automatische Bewegung ohne Pause; Test in einem eigenen Testdokument.</li>
+                </ul>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-64.md</code>.</p>
+    </footer>
+</body>
+</html>

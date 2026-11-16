@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 41 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 41: Custom Properties, @property und Design Tokens</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Komponente <code>.karte</code> soll die Tokens <code>--karte-abstand</code> und <code>--karte-hintergrund</code> verwenden. In der Variante <code>.karte.hervorgehoben</code> wird nur der Hintergrund überschrieben. Lege die Tokens fest und verwende sie.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>CSS</figcaption>
+                <pre><code>.karte {
+    --karte-abstand: var(--abstand-mittel);
+    --karte-hintergrund: var(--farbe-hintergrund);
+    padding: var(--karte-abstand);
+    background-color: var(--karte-hintergrund);
+}
+
+.karte.hervorgehoben {
+    --karte-hintergrund: var(--farbe-flaeche-abgesetzt);
+}</code></pre>
+                </figure>
+                <p>Die Variante setzt nur den Token neu. Die Deklaration <code>background-color: var(--karte-hintergrund)</code> bleibt unverändert und verwendet am hervorgehobenen Element automatisch den neuen Wert.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Regel lautet <code>color: var(--textfarbe, black)</code>, und <code>--textfarbe</code> ist auf <code>20px</code> gesetzt. Erkläre, warum der Ersatzwert nicht greift und welche Farbe der Text stattdessen erhält.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Der Ersatzwert in <code>var()</code> greift, wenn die Custom Property keinen verwendbaren Wert liefert, etwa weil sie fehlt oder zyklisch ist. Ob der Wert zur Eigenschaft passt, prüft er nicht. Hier ist <code>--textfarbe</code> gesetzt, <code>var()</code> setzt also <code>20px</code> ein. <code>color: 20px</code> ist ungültig, aber erst beim Berechnen des Wertes. Die Deklaration verhält sich dann wie <code>unset</code>: Weil <code>color</code> vererbt wird, erhält der Text die Farbe des Elternelements, nicht Schwarz. Eine zuvor überstimmte Deklaration lebt dabei nicht wieder auf.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-41.md</code>.</p>
+    </footer>
+</body>
+</html>

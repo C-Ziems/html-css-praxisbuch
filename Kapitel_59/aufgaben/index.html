@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 59 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 59: Barrierefreiheit im Zusammenspiel prüfen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite enthält folgende Bedienelemente: a) <code>&lt;button&gt;X&lt;/button&gt;</code> zum Schließen eines Hinweises, b) <code>&lt;a href="geraete.html"&gt;Mehr&lt;/a&gt;</code>, c) ein Suchfeld <code>&lt;input type="search" name="q"&gt;</code> ohne Beschriftung. Beurteile ihre Namen und verbessere sie.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) „X“ wird als Buchstabe vorgelesen und sagt nichts über die Aufgabe. Besser ist ein sichtbarer Text oder zumindest ein zugänglicher Name:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;button type="button"&gt;Hinweis schließen&lt;/button&gt;
+&lt;!-- oder bei einem Symbol: --&gt;
+&lt;button type="button" aria-label="Hinweis schließen"&gt;×&lt;/button&gt;</code></pre>
+                </figure>
+                <p>b) „Mehr“ nennt kein Ziel. Besser: <code>&lt;a href="geraete.html"&gt;Alle Gerätesteckbriefe&lt;/a&gt;</code>.</p>
+                <p>c) Ein Feld ohne Beschriftung hat keinen verständlichen Namen:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;label for="suche"&gt;Geräte durchsuchen&lt;/label&gt;
+&lt;input type="search" id="suche" name="q"&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Die Einkaufsliste soll mit der Tastatur geprüft werden. Formuliere dafür eine Prüfnotiz mit Seite, Einstellung, Schritten, Erwartung, Beobachtung und Ergebnis.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <div class="tabelle"><table>
+                <thead><tr><th scope="col">Angabe</th><th scope="col">Eintrag</th></tr></thead>
+                <tbody>
+                <tr><td>Seite</td><td><code>einkaufsliste.html</code> über Live Server</td></tr>
+                <tr><td>Einstellung</td><td>Browser und Version, Standardzoom, nur Tastatur</td></tr>
+                <tr><td>Schritte</td><td>Seite laden, mit Tab durch alle Bedienelemente, Formular ohne Artikel absenden, gültige Werte eintragen und absenden</td></tr>
+                <tr><td>Erwartung</td><td>Sichtbarer Fokus in sinnvoller Reihenfolge, Fehlermeldung beim leeren Pflichtfeld, Übermittlung mit gültigen Werten</td></tr>
+                <tr><td>Beobachtung</td><td>Tatsächliches Verhalten, etwa „Fokus nach dem Absenden am Seitenanfang“</td></tr>
+                <tr><td>Ergebnis</td><td>Bestanden, Fehler gefunden oder nicht geprüft</td></tr>
+                </tbody></table></div>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-59.md</code>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 36 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 36: Input-Typen und Eingabehilfen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Formular fragt a) eine E-Mail-Adresse, b) eine Postleitzahl, c) eine Raumtemperatur von 15 bis 25 °C in halben Grad und d) einen Liefertermin ab. Wähle für jede Angabe den Eingabetyp und hilfreiche Attribute.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;input type="email" id="email" name="email" autocomplete="email"&gt;
+&lt;input type="text" id="plz" name="plz" inputmode="numeric" autocomplete="postal-code"&gt;
+&lt;input type="number" id="temperatur" name="temperatur" min="15" max="25" step="0.5"&gt;
+&lt;input type="date" id="liefertermin" name="liefertermin"&gt;</code></pre>
+                </figure>
+                <p>Die Postleitzahl ist eine Ziffernfolge, keine Zahl, mit der gerechnet wird. Sie bleibt deshalb Text; <code>inputmode="numeric"</code> bietet trotzdem eine Zifferntastatur an. Zu jedem Feld gehört wie gewohnt ein <code>label</code>.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Formular fragt „Benachrichtigung per E-Mail und SMS“ und „Versandart Standard oder Express“ ab. Begründe, wann Checkboxen und wann Radiobuttons passen, und schreibe das HTML für die Versandart.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Die Benachrichtigungen sind unabhängig voneinander: Man kann E-Mail, SMS, beides oder keines wählen. Dafür passen Checkboxen. Bei der Versandart ist genau eine Wahl möglich; dafür passen Radiobuttons mit demselben <code>name</code>:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;fieldset&gt;
+    &lt;legend&gt;Versandart&lt;/legend&gt;
+    &lt;label&gt;
+        &lt;input type="radio" name="versand" value="standard" checked&gt;
+        Standard
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="radio" name="versand" value="express"&gt;
+        Express
+    &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+                </figure>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-36.md</code>.</p>
+    </footer>
+</body>
+</html>

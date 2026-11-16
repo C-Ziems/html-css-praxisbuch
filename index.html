@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Begleitmaterial | HTML &amp; CSS: Das Praxisbuch für moderne Websites</title>
+    <meta
+        name="description"
+        content="Begleitmaterial zum Buch HTML &amp; CSS: Projektstände des Smart-Home-Projekts, Aufgaben mit Lösungsvorschlägen und lauffähigen Beispielen zu jedem Kapitel."
+    >
+    <style>
+        :root {
+            color-scheme: light dark;
+            --text: #1f2328;
+            --text-ergaenzend: #555;
+            --hintergrund: #fff;
+            --flaeche: #f3f5f7;
+            --rahmen: #c9d1d9;
+            --akzent: #123f67;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e8e8e8;
+                --text-ergaenzend: #b8bcc0;
+                --hintergrund: #181a1b;
+                --flaeche: #23272a;
+                --rahmen: #4a5157;
+                --akzent: #9cc7ef;
+            }
+        }
+
+        body {
+            max-inline-size: 60rem;
+            margin-inline: auto;
+            padding: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--hintergrund);
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            color: var(--akzent);
+        }
+
+        a {
+            color: var(--akzent);
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--akzent);
+            outline-offset: 2px;
+        }
+
+        .kopf {
+            padding-block: 1.5rem;
+            border-block-end: 1px solid var(--rahmen);
+        }
+
+        .kopf h1 {
+            margin-block: 0 0.25rem;
+            font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+        }
+
+        .untertitel {
+            margin-block: 0 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .zusatz,
+        .autor {
+            margin-block: 0;
+            color: var(--text-ergaenzend);
+        }
+
+        .hinweise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+            gap: 1rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .hinweise li {
+            padding: 1rem;
+            background-color: var(--flaeche);
+            border-radius: 0.25rem;
+        }
+
+        .hinweise strong {
+            display: block;
+            margin-block-end: 0.25rem;
+        }
+
+        .tabelle {
+            overflow-x: auto;
+        }
+
+        table {
+            inline-size: 100%;
+            min-inline-size: 44rem;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        thead th:nth-child(1) {
+            inline-size: 5rem;
+        }
+
+        thead th:nth-child(3),
+        thead th:nth-child(4) {
+            inline-size: 13rem;
+        }
+
+        th,
+        td {
+            padding: 0.4rem 0.6rem;
+            text-align: start;
+            vertical-align: top;
+            border-block-end: 1px solid var(--rahmen);
+        }
+
+        code {
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        footer {
+            margin-block-start: 3rem;
+            padding-block-start: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-ergaenzend);
+            border-block-start: 1px solid var(--rahmen);
+        }
+    </style>
+</head>
+<body>
+    <header class="kopf">
+        <h1>HTML &amp; CSS</h1>
+        <p class="untertitel">Das Praxisbuch für moderne Websites</p>
+        <p class="zusatz">Grundlagen, responsive Layouts und Barrierefreiheit nach aktuellen Webstandards</p>
+        <p class="zusatz">Mit durchgehendem Projekt, Aufgaben und Lösungen</p>
+        <p class="autor">Christian Ziems</p>
+    </header>
+    <main>
+        <h2>Begleitmaterial zum Buch</h2>
+        <p>
+            Im Buch entsteht Kapitel für Kapitel die Website eines virtuellen Smart Homes. Hier findest du den Stand
+            dieses Projekts nach jedem Kapitel, das den Code verändert, und ab Kapitel 6 zu jedem Kapitel die Aufgaben
+            mit Lösungsvorschlägen und lauffähigen Beispielen.
+        </p>
+        <ul class="hinweise">
+            <li>
+                <strong>Projektstände vergleichen</strong>
+                Weicht dein Ergebnis ab, öffne den Projektstand des Kapitels und vergleiche ihn mit deinem Code.
+                Möchtest du einen Stand verändern, arbeite in einer Kopie.
+            </li>
+            <li>
+                <strong>Aufgaben zuerst selbst lösen</strong>
+                Die Lösungsvorschläge sind zunächst verborgen. Bearbeite jede Aufgabe in einer eigenen Datei und öffne
+                erst dann den Vorschlag.
+            </li>
+            <li>
+                <strong>Herunterladen und lokal öffnen</strong>
+                <a href="https://github.com/C-Ziems/html-css-praxisbuch/archive/refs/heads/main.zip">Alle Dateien als
+                ZIP herunterladen</a> oder das <a href="https://github.com/C-Ziems/html-css-praxisbuch">Repository auf
+                GitHub</a> öffnen. Öffne die Dateien wie im Buch über einen lokalen Webserver, etwa mit Live Server
+                in VS Code.
+            </li>
+        </ul>
+
+        <h2>Kapitel</h2>
+        <section class="teil" aria-labelledby="teil-i">
+            <h3 id="teil-i">Teil I: Schnell ins Web</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Das Web, HTML und CSS</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Arbeitsumgebung und Projektstart</td>
+                        <td>leerer Projektordner</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Schnellstart: Unsere erste Webseite</td>
+                        <td><a href="Kapitel_03/smart-home/index.html">ansehen</a></td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>HTML-Syntax und Dokumentgrundgerüst</td>
+                        <td>unverändert, wie <a href="Kapitel_03/smart-home/index.html">Kapitel 3</a></td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Browser und DevTools am eigenen Projekt</td>
+                        <td>unverändert, wie <a href="Kapitel_03/smart-home/index.html">Kapitel 3</a></td>
+                        <td>–</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-ii">
+            <h3 id="teil-ii">Teil II: Inhalte und Verbindungen</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Überschriften, Absätze und Dokumentgliederung</td>
+                        <td><a href="Kapitel_06/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_06/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Textsemantik I: Betonung, Wichtigkeit und Textauszeichnung</td>
+                        <td><a href="Kapitel_07/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_07/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Textsemantik II: Zitate, Code und Daten</td>
+                        <td><a href="Kapitel_08/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_08/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Listen und Beschreibungslisten</td>
+                        <td><a href="Kapitel_09/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_09/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Links, URLs, Fragmente und Navigation</td>
+                        <td><a href="Kapitel_10/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_10/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>Mehrseitige Website, Pfade und Projektstruktur</td>
+                        <td><a href="Kapitel_11/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_11/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-iii">
+            <h3 id="teil-iii">Teil III: CSS-Fundament</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>CSS einbinden und die erste Gestaltung aufbauen</td>
+                        <td><a href="Kapitel_12/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_12/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>Selektoren, Klassen und IDs</td>
+                        <td><a href="Kapitel_13/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_13/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>CSS-Werte, Einheiten und grundlegende Funktionen</td>
+                        <td><a href="Kapitel_14/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_14/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15</th>
+                        <td>Grundlagen der Typografie</td>
+                        <td><a href="Kapitel_15/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_15/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16</th>
+                        <td>Kaskade, Vererbung und Spezifität</td>
+                        <td>unverändert, wie <a href="Kapitel_15/smart-home/index.html">Kapitel 15</a></td>
+                        <td><a href="Kapitel_16/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">17</th>
+                        <td>Farben und Hintergründe</td>
+                        <td><a href="Kapitel_17/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_17/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">18</th>
+                        <td>Boxmodell, Größen und Abstände</td>
+                        <td><a href="Kapitel_18/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_18/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">19</th>
+                        <td>Normal Flow, display, overflow und Sichtbarkeit</td>
+                        <td><a href="Kapitel_19/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_19/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-iv">
+            <h3 id="teil-iv">Teil IV: Struktur und Layout</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">20</th>
+                        <td>Semantische Seitenstruktur</td>
+                        <td><a href="Kapitel_20/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_20/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">21</th>
+                        <td>Positionierung und Stapelreihenfolge</td>
+                        <td><a href="Kapitel_21/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_21/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">22</th>
+                        <td>Textumfluss mit float, clear und shape-outside</td>
+                        <td><a href="Kapitel_22/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_22/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>Flexbox</td>
+                        <td><a href="Kapitel_23/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_23/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>CSS Grid: Flexible Raster aufbauen</td>
+                        <td><a href="Kapitel_24/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_24/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">25</th>
+                        <td>CSS Grid: Elemente platzieren und Subgrid nutzen</td>
+                        <td><a href="Kapitel_25/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_25/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>Mehrspaltensatz und Layoutentscheidungen</td>
+                        <td><a href="Kapitel_26/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_26/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">27</th>
+                        <td>Logische Eigenschaften und Schreibrichtungen</td>
+                        <td><a href="Kapitel_27/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_27/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-v">
+            <h3 id="teil-v">Teil V: Bilder und Medien</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">28</th>
+                        <td>Bilder und Bildunterschriften</td>
+                        <td><a href="Kapitel_28/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_28/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">29</th>
+                        <td>Responsive Bilder</td>
+                        <td><a href="Kapitel_29/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_29/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">30</th>
+                        <td>Image Maps und grafische Navigation</td>
+                        <td><a href="Kapitel_30/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_30/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">31</th>
+                        <td>Audio, Video und Untertitel</td>
+                        <td><a href="Kapitel_31/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_31/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">32</th>
+                        <td>Eingebettete Inhalte, iframe, object, SVG und canvas</td>
+                        <td>unverändert, wie <a href="Kapitel_31/smart-home/index.html">Kapitel 31</a></td>
+                        <td><a href="Kapitel_32/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-vi">
+            <h3 id="teil-vi">Teil VI: Daten und Formulare</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">33</th>
+                        <td>Grundlagen von HTML-Tabellen</td>
+                        <td><a href="Kapitel_33/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_33/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">34</th>
+                        <td>Tabellen vertiefen, Messwerte und Fortschritt darstellen</td>
+                        <td><a href="Kapitel_34/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_34/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">35</th>
+                        <td>Grundlagen von HTML-Formularen</td>
+                        <td><a href="Kapitel_35/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_35/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">36</th>
+                        <td>Input-Typen und Eingabehilfen</td>
+                        <td><a href="Kapitel_36/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_36/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">37</th>
+                        <td>Formulargruppen, Textbereiche und Auswahllisten</td>
+                        <td><a href="Kapitel_37/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_37/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">38</th>
+                        <td>Validierung und Formularstyling</td>
+                        <td><a href="Kapitel_38/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_38/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-vii">
+            <h3 id="teil-vii">Teil VII: CSS vertiefen und strukturieren</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">39</th>
+                        <td>Fortgeschrittene Selektoren und Pseudoklassen</td>
+                        <td><a href="Kapitel_39/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_39/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">40</th>
+                        <td>Pseudoelemente und generierte Darstellung</td>
+                        <td><a href="Kapitel_40/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_40/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">41</th>
+                        <td>Custom Properties, @property und Design Tokens</td>
+                        <td><a href="Kapitel_41/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_41/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">42</th>
+                        <td>Fortgeschrittene Typografie und Webfonts</td>
+                        <td><a href="Kapitel_42/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_42/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">43</th>
+                        <td>Rahmen, Konturen, Schatten und visuelle Details</td>
+                        <td><a href="Kapitel_43/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_43/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">44</th>
+                        <td>CSS Nesting, @scope und @layer</td>
+                        <td><a href="Kapitel_44/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_44/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">45</th>
+                        <td>Flexible Größen mit CSS-Einheiten und Funktionen</td>
+                        <td><a href="Kapitel_45/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_45/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-viii">
+            <h3 id="teil-viii">Teil VIII: Responsive Gestaltung und Bewegung</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">46</th>
+                        <td>Media Queries und inhaltsbasierte Breakpoints</td>
+                        <td><a href="Kapitel_46/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_46/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">47</th>
+                        <td>Container Queries: Komponenten an ihren Platz anpassen</td>
+                        <td><a href="Kapitel_47/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_47/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">48</th>
+                        <td>Nutzerpräferenzen und robuste Darstellung</td>
+                        <td><a href="Kapitel_48/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_48/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">49</th>
+                        <td>Transformationen und Zustandsübergänge mit CSS</td>
+                        <td><a href="Kapitel_49/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_49/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">50</th>
+                        <td>Animationen und @keyframes</td>
+                        <td><a href="Kapitel_50/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_50/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">51</th>
+                        <td>Scrollverhalten und Bedienkomfort</td>
+                        <td><a href="Kapitel_51/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_51/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">52</th>
+                        <td>Scrollgesteuerte Animationen und View Transitions</td>
+                        <td>unverändert, wie <a href="Kapitel_51/smart-home/index.html">Kapitel 51</a></td>
+                        <td><a href="Kapitel_52/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-ix">
+            <h3 id="teil-ix">Teil IX: Native HTML-Interaktionen und Komponentenstrukturen</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">53</th>
+                        <td>Aufklappbereiche, Dialoge und Popover</td>
+                        <td><a href="Kapitel_53/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_53/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">54</th>
+                        <td>Webstandards, Browserunterstützung und Referenzen prüfen</td>
+                        <td>unverändert, wie <a href="Kapitel_53/smart-home/index.html">Kapitel 53</a></td>
+                        <td><a href="Kapitel_54/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">55</th>
+                        <td>Sprache, Ruby-Annotationen und Suchbereiche</td>
+                        <td><a href="Kapitel_55/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_55/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">56</th>
+                        <td>Templates, Shadow DOM und die Einbindung von Scripts</td>
+                        <td>unverändert, wie <a href="Kapitel_55/smart-home/index.html">Kapitel 55</a></td>
+                        <td><a href="Kapitel_56/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-x">
+            <h3 id="teil-x">Teil X: Qualität und Veröffentlichung</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">57</th>
+                        <td>Eine Druckdarstellung ergänzen</td>
+                        <td><a href="Kapitel_57/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_57/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">58</th>
+                        <td>Dokumentinformationen und Favicon vervollständigen</td>
+                        <td><a href="Kapitel_58/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_58/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">59</th>
+                        <td>Barrierefreiheit im Zusammenspiel prüfen</td>
+                        <td><a href="Kapitel_59/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_59/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">60</th>
+                        <td>Validierung, Kompatibilität und @supports</td>
+                        <td>unverändert, wie <a href="Kapitel_59/smart-home/index.html">Kapitel 59</a></td>
+                        <td><a href="Kapitel_60/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">61</th>
+                        <td>Datenschutz und Rechte vor der Veröffentlichung prüfen</td>
+                        <td>unverändert, wie <a href="Kapitel_59/smart-home/index.html">Kapitel 59</a></td>
+                        <td><a href="Kapitel_61/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">62</th>
+                        <td>Die Website für das Hosting vorbereiten</td>
+                        <td>unverändert, wie <a href="Kapitel_59/smart-home/index.html">Kapitel 59</a></td>
+                        <td><a href="Kapitel_62/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">63</th>
+                        <td>Den Projektstand mit Git verwalten</td>
+                        <td><a href="Kapitel_63/smart-home/index.html">ansehen</a></td>
+                        <td><a href="Kapitel_63/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="teil" aria-labelledby="teil-xi">
+            <h3 id="teil-xi">Teil XI: Über das Projekt hinaus</h3>
+            <div class="tabelle">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Kapitel</th>
+                            <th scope="col">Titel</th>
+                            <th scope="col">Projektstand</th>
+                            <th scope="col">Aufgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">64</th>
+                        <td>Weitere Techniken der Webentwicklung einordnen</td>
+                        <td>unverändert, wie <a href="Kapitel_63/smart-home/index.html">Kapitel 63</a></td>
+                        <td><a href="Kapitel_64/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">65</th>
+                        <td>Das Smart Home weiterentwickeln</td>
+                        <td>unverändert, wie <a href="Kapitel_63/smart-home/index.html">Kapitel 63</a></td>
+                        <td><a href="Kapitel_65/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">66</th>
+                        <td>Veröffentlichen, regelmäßig prüfen und weiterlernen</td>
+                        <td>unverändert, wie <a href="Kapitel_63/smart-home/index.html">Kapitel 63</a></td>
+                        <td><a href="Kapitel_66/aufgaben/index.html">Aufgaben und Lösungen</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Quellcode und Begleitmaterial stehen unter der MIT-Lizenz, die Nutzungsbedingungen in der Datei
+            <code>LICENSE</code>. Ausgenommen sind der Buchtext und das Foto der Außenansicht des Hauses: Es stammt von
+            <a href="https://pixabay.com/de/photos/haus-architektur-vorgarten-garage-1836070/">Pixabay</a>
+            und steht unter der Pixabay-Inhaltslizenz. Einzelheiten nennt die Datei <code>README.md</code>.
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 7 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 7: Textsemantik I: Betonung, Wichtigkeit und Textauszeichnung</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Text enthält folgende Angaben: a) die gesprochene Betonung auf „nicht“ in „Bitte das Fenster nicht öffnen“, b) den Warnhinweis „Batterie nur mit Schutzhandschuhen wechseln“, c) den englischen Fachbegriff „smart meter“, d) die Angabe „21 °C“, die nicht umbrechen soll. Wähle für jede Angabe das passende Element oder die passende Zeichenreferenz und begründe deine Wahl.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Bitte das Fenster &lt;em&gt;nicht&lt;/em&gt; öffnen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Batterie nur mit Schutzhandschuhen wechseln.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Der Zähler ist ein &lt;i lang="en"&gt;smart meter&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;Solltemperatur: 21&amp;nbsp;°C&lt;/p&gt;</code></pre>
+                </figure>
+                <p>a) <code>em</code> gibt die gesprochene Betonung wieder; sie verändert die Aussage des Satzes.</p>
+                <p>b) <code>strong</code> kennzeichnet Wichtigkeit, hier einen Sicherheitshinweis.</p>
+                <p>c) <code>i</code> hebt einen Ausdruck aus einer anderen Sprache hervor, <code>lang="en"</code> nennt die Sprache. Soll der Ausdruck nicht hervorgehoben werden, genügt <code>&lt;span lang="en"&gt;</code>.</p>
+                <p>d) <code>&amp;nbsp;</code> verhindert einen Zeilenumbruch zwischen Zahl und Einheit.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Angebot nennt einen alten Preis von 49 € und einen neuen von 39 €. Schreibe beide Varianten: einmal mit <code>s</code> als überholte Angabe und einmal mit <code>del</code> und <code>ins</code> als dokumentierte Änderung. Erkläre anschließend, wann welche Lösung passt.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Überholte Angabe:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Preis: &lt;s&gt;49&amp;nbsp;€&lt;/s&gt; 39&amp;nbsp;€&lt;/p&gt;</code></pre>
+                </figure>
+                <p>Dokumentierte Änderung:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Preis: &lt;del&gt;49&amp;nbsp;€&lt;/del&gt; &lt;ins&gt;39&amp;nbsp;€&lt;/ins&gt;&lt;/p&gt;</code></pre>
+                </figure>
+                <p><code>s</code> passt, wenn der alte Preis nur noch zur Information sichtbar bleibt, etwa bei einem Sonderangebot. <code>del</code> und <code>ins</code> passen, wenn ausdrücklich nachvollziehbar sein soll, dass das Dokument geändert wurde.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-07.md</code>.</p>
+    </footer>
+</body>
+</html>

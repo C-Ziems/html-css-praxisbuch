@@ -1,0 +1,9 @@
+body {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer basis, komponenten;
+@layer komponenten { a { color: green; } }
+@layer basis { #navigation a { color: red; } }
+a { color: blue; }

@@ -1,0 +1,5 @@
+.hauptnavigation a { color: darkgreen; }       /* a) */
+.geraeteliste > li { color: darkblue; }        /* b) */
+.geraeteliste li li { color: black; }          /* nur zur Veranschaulichung: innere Einträge schwarz */
+.pruefen.dringend { color: darkred; }          /* c) */
+[aria-current="page"] { background-color: yellow; }  /* d) */

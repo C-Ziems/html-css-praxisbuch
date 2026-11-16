@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 61 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 61: Datenschutz und Rechte vor der Veröffentlichung prüfen</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Website enthält a) eine Schrift von einem fremden Schriftdienst, b) ein Video eines Videoportals im <code>iframe</code> und c) einen gewöhnlichen Link zur Website eines Herstellers. Beschreibe für jede Einbindung, welche zusätzlichen Datenflüsse beim Seitenaufruf entstehen.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) Beim Laden der Seite fordert der Browser die Schrift beim fremden Dienst an. Dieser erhält dabei mindestens die IP-Adresse und technische Angaben, ohne dass jemand etwas anklickt.</p>
+                <p>b) Das <code>iframe</code> lädt ein vollständiges Dokument des Portals, das weitere Ressourcen anfordern und Informationen auf dem Endgerät speichern oder auslesen kann. Hier sind Datenverarbeitung und gegebenenfalls Einwilligung genau zu prüfen.</p>
+                <p>c) Ein gewöhnlicher Link lädt nichts, solange niemand ihn anklickt. Erst beim Aufruf wechselt der Browser zur Zielseite.</p>
+                <p>Ob und unter welchen Bedingungen eine Einbindung zulässig ist, klären wir anhand der tatsächlichen Verarbeitung; diese Übersicht ersetzt keine rechtliche Prüfung.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Formular soll von GET auf POST umgestellt werden, weil das sicherer sei. Erkläre, warum POST nicht automatisch sicherer ist.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>POST verlagert die Eingaben aus der Adresse in den Anfragekörper. Sie erscheinen dann nicht im Verlauf oder in der Adresszeile, werden aber genauso unverschlüsselt übertragen, wenn kein HTTPS verwendet wird. Für die Transportverschlüsselung ist HTTPS zuständig. Wie die Daten auf dem Server verarbeitet, gespeichert und geschützt werden, hängt von der Anwendung ab, nicht von der Methode.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-61.md</code>.</p>
+    </footer>
+</body>
+</html>

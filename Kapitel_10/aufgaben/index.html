@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 10 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 10: Links, URLs, Fragmente und Navigation</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite enthält die Linktexte „Die Anleitung finden Sie <code>&lt;a href="anleitung.pdf"&gt;hier&lt;/a&gt;</code>.“ und „<code>&lt;a href="geraete.html"&gt;Mehr&lt;/a&gt;</code>“. Formuliere beide so um, dass sie ihr Ziel verständlich benennen.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;p&gt;Die &lt;a href="anleitung.pdf"&gt;Bedienungsanleitung des Thermostats (PDF)&lt;/a&gt; beschreibt alle Einstellungen.&lt;/p&gt;
+&lt;p&gt;&lt;a href="geraete.html"&gt;Alle Gerätesteckbriefe ansehen&lt;/a&gt;&lt;/p&gt;</code></pre>
+                </figure>
+                <p>Der Linktext benennt Ziel oder Zweck auch ohne den umgebenden Satz. Das ist wichtig, weil assistive Technik Links auch als Liste anzeigen kann.</p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Testdatei soll drei Abschnitte und davor eine Inhaltsübersicht erhalten. Lege die Abschnitte mit <code>id</code> an, verlinke sie mit Fragmentlinks und prüfe die Links mit Tabulatortaste und Enter. Beobachte anschließend, was geschieht, wenn ein Fragment zu keiner <code>id</code> passt.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#erdgeschoss"&gt;Erdgeschoss&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#obergeschoss"&gt;Obergeschoss&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#garten"&gt;Garten&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id="erdgeschoss"&gt;Erdgeschoss&lt;/h2&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;h2 id="obergeschoss"&gt;Obergeschoss&lt;/h2&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;h2 id="garten"&gt;Garten&lt;/h2&gt;
+&lt;p&gt;…&lt;/p&gt;</code></pre>
+                </figure>
+                <p>Passt ein Fragment zu keiner <code>id</code>, ändert sich in gängigen Browsern zwar die Adresse in der Adresszeile, die Seite springt aber nicht zum gewünschten Bereich. Eine Fehlermeldung erscheint nicht; solche Fehler fallen nur beim Ausprobieren auf. Halte fest, was dein Browser tatsächlich zeigt.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-10.md</code>.</p>
+    </footer>
+</body>
+</html>

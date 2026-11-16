@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 31 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 31: Audio, Video und Untertitel</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Ein Video soll mit Bedienelementen, Vorschaubild, zwei Quelldateien (MP4 und WebM) und einer deutschen Caption-Spur erscheinen. Binde es ein.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;video controls poster="bilder/rundgang-vorschau.png" width="1280" height="720"&gt;
+    &lt;source src="medien/rundgang.mp4" type="video/mp4"&gt;
+    &lt;source src="medien/rundgang.webm" type="video/webm"&gt;
+    &lt;track kind="captions" src="medien/rundgang-de.vtt" srclang="de" label="Deutsch"&gt;
+    &lt;p&gt;Das Video kann hier nicht abgespielt werden.
+       &lt;a href="medien/rundgang.mp4"&gt;Video herunterladen&lt;/a&gt;&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+                </figure>
+                <p>Der Browser verwendet die erste <code>source</code>, die er abspielen kann. Der Inhalt nach den <code>track</code>-Elementen erscheint nur, wenn der Browser <code>video</code> gar nicht unterstützt.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Video bietet Textspuren der Arten <code>captions</code> und <code>subtitles</code> an. Erkläre den Unterschied an einem Beispiel.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>captions</code> geben Sprache und wichtige Geräusche in der Sprache des Videos wieder, etwa „[Türklingel]“ oder „[Musik setzt ein]“. Sie richten sich an Menschen, die den Ton nicht oder schlecht hören. <code>subtitles</code> geben den Dialog als Verschriftlichung oder Übersetzung wieder, etwa englische Untertitel zu einem deutschen Video. Sie richten sich an Menschen, die den Ton hören, das Gesprochene aber nicht verstehen, zum Beispiel wegen der Sprache oder einer lauten Umgebung.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-31.md</code>.</p>
+    </footer>
+</body>
+</html>

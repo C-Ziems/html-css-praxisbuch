@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kapitel 34, Aufgabe 2: meter und progress</title>
+</head>
+<body>
+    <h1>meter und progress</h1>
+    <p>
+        Die Messwerte stehen in meter, die Fortschritte in progress. Der Download ohne value zeigt einen
+        unbestimmten Fortschritt. Die Darstellung der Luftfeuchte hängt von low, high und optimum ab.
+    </p>
+    <p>
+        <label for="speicher">a) Ladestand des Hausspeichers:</label>
+        <meter id="speicher" min="0" max="100" value="70">70&nbsp;%</meter> 70&nbsp;%
+    </p>
+    <p>
+        <label for="firmware">b) Firmware-Update:</label>
+        <progress id="firmware" max="100" value="40">40&nbsp;%</progress> 40&nbsp;%
+    </p>
+    <p>
+        <label for="feuchte">c) Luftfeuchte:</label>
+        <meter id="feuchte" min="0" max="100" low="40" high="60" optimum="50" value="55">55&nbsp;%</meter> 55&nbsp;%
+    </p>
+    <p>
+        <label for="download">d) Download:</label>
+        <progress id="download">wird geladen</progress> Größe unbekannt
+    </p>
+</body>
+</html>

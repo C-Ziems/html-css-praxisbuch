@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 11 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 11: Mehrseitige Website, Pfade und Projektstruktur</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Website besitzt die folgende Ordnerstruktur. Bestimme die relativen Pfade a) von <code>index.html</code> zu <code>thermostat.html</code>, b) von <code>thermostat.html</code> zu <code>kontakt.html</code>, c) von <code>faq.html</code> zu <code>thermostat.png</code>, d) von <code>thermostat.html</code> zum Abschnitt <code>#batterie</code> in <code>faq.html</code>.</p>
+            <figure class="code">
+            <figcaption>Text</figcaption>
+            <pre><code>website/
+├── index.html
+├── kontakt.html
+├── geraete/
+│   ├── thermostat.html
+│   └── bilder/
+│       └── thermostat.png
+└── hilfe/
+    └── faq.html</code></pre>
+            </figure>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) <code>geraete/thermostat.html</code></p>
+                <p>b) <code>../kontakt.html</code></p>
+                <p>c) <code>../geraete/bilder/thermostat.png</code></p>
+                <p>d) <code>../hilfe/faq.html#batterie</code></p>
+                <p>Ausgangspunkt ist jeweils der Ordner der Datei, in der der Verweis steht. <code>../</code> wechselt eine Ebene nach oben.</p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Eine Seite liegt unter <code>https://example.com/smart-home/index.html</code>. Ihr Link <code>&lt;a href="/haus.html"&gt;Unser Haus&lt;/a&gt;</code> führt nicht zur Hausseite. Erkläre die Ursache und gib eine Korrektur an.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>Der führende Schrägstrich beginnt an der Wurzel des Ursprungs. Der Link führt deshalb zu <code>https://example.com/haus.html</code>; der Ordner <code>smart-home</code> fehlt im Ziel. Die Korrektur ist ein dokumentrelativer Verweis:</p>
+                <figure class="code">
+                <figcaption>HTML</figcaption>
+                <pre><code>&lt;a href="haus.html"&gt;Unser Haus&lt;/a&gt;</code></pre>
+                </figure>
+                <p>Auch <code>/smart-home/haus.html</code> führt zum Ziel. Dieser Pfad setzt aber voraus, dass die Website immer im Ordner <code>smart-home</code> liegt; der dokumentrelative Verweis funktioniert auch nach einem Umzug in einen anderen Ordner.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-11.md</code>.</p>
+    </footer>
+</body>
+</html>

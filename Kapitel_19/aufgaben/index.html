@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aufgaben zu Kapitel 19 | HTML &amp; CSS</title>
+    <link rel="stylesheet" href="aufgaben.css">
+</head>
+<body>
+    <header>
+        <p class="buch">HTML &amp; CSS: Das Praxisbuch für moderne Websites</p>
+        <h1>Kapitel 19: Normal Flow, display, overflow und Sichtbarkeit</h1>
+        <p>Aufgaben und Lösungsvorschläge. Bearbeite jede Aufgabe zuerst selbst in einer eigenen Datei
+        außerhalb des Smart-Home-Projekts und öffne erst dann den Lösungsvorschlag.</p>
+    </header>
+    <main>
+        <section class="aufgabe" aria-labelledby="aufgabe-1">
+            <h2 id="aufgabe-1">Aufgabe 1</h2>
+            <p>Eine Seite stellt folgende Anforderungen: a) Ein Element soll weder sichtbar noch bedienbar sein und keinen Platz einnehmen. b) Es soll unsichtbar sein, seinen Platz aber behalten. c) Ein langer Text soll in einer Box mit begrenzter Höhe scrollbar sein. d) Links sollen mit Innenabstand nebeneinander im Zeilenfluss stehen. Wähle für jede Anforderung die passende Technik.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p>a) <code>display: none</code> oder das HTML-Attribut <code>hidden</code></p>
+                <p>b) <code>visibility: hidden</code></p>
+                <p>c) eine Höhenbegrenzung, etwa <code>max-height</code>, zusammen mit <code>overflow: auto</code></p>
+                <p>d) <code>display: inline-block</code></p>
+                <p class="beispiel"><a href="aufgabe-1.html">Beispiel zu Aufgabe 1 im Browser öffnen</a> <span>(Datei <code>aufgabe-1.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+        <section class="aufgabe" aria-labelledby="aufgabe-2">
+            <h2 id="aufgabe-2">Aufgabe 2</h2>
+            <p>Ein Bedienelement wird mit <code>opacity: 0</code> ausgeblendet. Erkläre, warum es für die Tastatur trotzdem nicht verborgen ist.</p>
+            <details class="loesung">
+                <summary>Lösungsvorschlag anzeigen</summary>
+                <p><code>opacity: 0</code> macht ein Element nur durchsichtig. Es behält seinen Platz, kann weiterhin den Fokus erhalten und wird von Screenreadern vorgelesen. Mit der Tabulatortaste landet man deshalb auf einem unsichtbaren Element und sieht nicht, was gerade bedient wird. Soll ein Bedienelement nicht erreichbar sein, verwenden wir <code>display: none</code>, <code>hidden</code> oder, wenn es seinen Platz behalten soll, <code>visibility: hidden</code>.</p>
+                <p class="beispiel"><a href="aufgabe-2.html">Beispiel zu Aufgabe 2 im Browser öffnen</a> <span>(Datei <code>aufgabe-2.html</code> in diesem Ordner)</span></p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>Ein Lösungsvorschlag ist eine mögliche Lösung. Andere Bezeichnungen, Werte oder Formulierungen
+        können ebenso richtig sein, wenn sie die Aufgabe erfüllen und die Begründung trägt.
+        Dieselben Inhalte stehen als Text in <code>kapitel-19.md</code>.</p>
+    </footer>
+</body>
+</html>

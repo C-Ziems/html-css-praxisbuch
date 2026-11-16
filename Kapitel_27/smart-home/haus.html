@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Home | Das Haus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="seitenrahmen">
+        <header>
+            <h1>Das Haus</h1>
+        </header>
+        <nav class="hauptnavigation">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="haus.html" aria-current="page">Das Haus</a></li>
+                <li><a href="geraete.html">Geräte</a></li>
+                <li><a href="einkaufsliste.html">Einkaufsliste</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p>Unser virtuelles Smart Home besteht aus mehreren Bereichen, die wir im Verlauf des Projekts weiter ausbauen.</p>
+            <section>
+                <h2 id="erdgeschoss">Erdgeschoss</h2>
+                <ul>
+                    <li>Wohnzimmer</li>
+                    <li>Küche</li>
+                </ul>
+            </section>
+            <section>
+                <h2 id="obergeschoss">Obergeschoss</h2>
+                <ul>
+                    <li>Schlafzimmer</li>
+                    <li>Arbeitszimmer</li>
+                    <li>Bad</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Räume im Überblick</h2>
+                <p>Die folgenden Zustände und Messwerte sind Demonstrationsdaten.</p>
+                <div class="raumliste">
+                    <section class="raumkarte statuskarte">
+                        <h3>Wohnzimmer</h3>
+                        <span class="status">Online</span>
+                        <span class="raumkennzeichen" aria-hidden="true">W</span>
+                        <p>Temperatur: 21&nbsp;°C. Im Wohnzimmer betrachten wir Beleuchtung, Raumklima und Unterhaltungselektronik. Die Raumübersicht führt die zugehörigen Zustände und Messwerte zusammen. So erkennen wir, welche Informationen zu diesem Raum gehören.</p>
+                    </section>
+                    <section class="raumkarte">
+                        <h3>Küche</h3>
+                        <p>Temperatur: 20&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte">
+                        <h3>Schlafzimmer</h3>
+                        <p>Temperatur: 19&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte">
+                        <h3>Arbeitszimmer</h3>
+                        <p>Temperatur: 20&nbsp;°C</p>
+                    </section>
+                    <section class="raumkarte">
+                        <h3>Bad</h3>
+                        <p>Temperatur: 22&nbsp;°C</p>
+                    </section>
+                </div>
+            </section>
+            <section>
+                <h2>Das vernetzte Haus</h2>
+                <div class="hausbeschreibung">
+                    <p>In einem vernetzten Haus ergänzen sich Informationen aus unterschiedlichen Bereichen. Ein Temperaturwert beschreibt das Raumklima, ein Fensterkontakt meldet einen Öffnungszustand, und eine Verbrauchsmessung zeigt den Energiebedarf eines Geräts. Erst durch ihre Zuordnung erhalten diese Angaben einen verständlichen Zusammenhang.</p>
+                    <p>Ein geöffnetes Fenster kann beispielsweise erklären, warum die Temperatur in einem Raum sinkt. Ein erhöhter Stromverbrauch kann mit einem gerade verwendeten Gerät zusammenhängen. Einzelne Werte liefern deshalb Anhaltspunkte, müssen aber im Zusammenhang mit der jeweiligen Situation betrachtet werden.</p>
+                    <p>Unsere Website bietet dafür unterschiedliche Zugänge. Die Startseite fasst ausgewählte Angaben zusammen. Die Hausseite ordnet Informationen den Räumen zu. Im Gerätepass halten wir Eigenschaften einzelner Geräte fest, während die Einkaufsliste geplante Komponenten sammelt.</p>
+                    <p>Eine übersichtliche Darstellung soll diese Zusammenhänge verständlich machen. Bezeichnungen, Einheiten und Hinweise gehören deshalb unmittelbar zu den jeweiligen Angaben. In unserem Projekt verwenden wir weiterhin statische Demonstrationsdaten; eine Verbindung zu realen Sensoren besteht bisher nicht.</p>
+                </div>
+            </section>
+        </main>
+        <footer class="seitenfuss">
+            <p>Projektstand: <time datetime="2026-09-27">27. September 2026</time></p>
+        </footer>
+    </div>
+</body>
+
+</html>
