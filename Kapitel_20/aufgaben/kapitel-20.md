@@ -2,7 +2,7 @@
 
 ## Aufgabe 1
 
-**Aufgabe:** Ein Blogartikel besteht aus einem Kopf mit Titel und Datum, mehreren Inhaltsabschnitten, einem Kasten „Weiterführende Links“ und einem Kontakt zur Autorin. Wähle passende Strukturelemente und lege ein HTML-Gerüst an.
+**Aufgabe:** Ein Blogartikel besteht aus einem Kopf mit Titel und Datum, mehreren Inhaltsabschnitten, einem Kasten „Weiterführende Links“ und einem Kontakt zum Autor. Wähle passende Strukturelemente und lege ein HTML-Gerüst an.
 
 **Lösungsvorschlag**
 
@@ -28,7 +28,7 @@
     </aside>
     <footer>
         <address>
-            Kontakt zur Autorin: <a href="mailto:autorin@example.com">autorin@example.com</a>
+            Kontakt zum Autor: <a href="mailto:autor@example.com">autor@example.com</a>
         </address>
     </footer>
 </article>
